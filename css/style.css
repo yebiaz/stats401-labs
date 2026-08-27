@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Times, sans-serif;
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
@@ -11,6 +11,7 @@ h1 {
 
 h2 {
     margin-top: 30px;
+    text-align: center;
 }
 
 p {
@@ -19,6 +20,7 @@ p {
 
 #chart {
     margin-top: 30px;
+    text-align: center;
 }
 
 .lab-nav {
@@ -41,4 +43,21 @@ p {
 .lab-nav a:hover {
     background: #333;
     color: white;
+}
+
+.chart-title {
+    font-size: 20px;
+    font-weight: bold;
+    fill: #333;
+}
+
+.name-label {
+    font-size: 20px;
+    fill: #333;
+}
+
+#chart svg {
+    background: #faf7f0;
+    border: 1px solid #d9d2c5;
+    border-radius: 8px;
 }
