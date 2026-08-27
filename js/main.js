@@ -42,22 +42,68 @@ d3.select("#numbers")
 
 const values = [10, 20, 30, 40, 50];
 
-const svg = d3.select("#svg-demo")
+const svgD = d3.select("#svg-demo")
     .append("svg")
     .attr("width", 600)
     .attr("height", 200);
 
-svg.selectAll("circle")
+svgD.selectAll("circle")
     .data(values)
     .join("circle")
     .attr("cx", (d, i) => 60 + i * 100)
     .attr("cy", 100)
     .attr("r", d => d / 2)
     .attr("fill", "steelblue");
+  
     
-d3.csv("data/students.csv")
+      
+        
+          
+//Lab 1   
+const svgS = d3.select("#chart")
+    .append("svg")
+    .attr("width", 650)
+    .attr("height", 350);
+    
+const color = d3.scaleLinear()
+    .domain([55, 95])
+    .range(["red", "green"]);
+
+d3.csv("../data/students.csv", d => ({
+    name: d.name,
+    score: +d.score}))
     .then(data => {
 
-        console.log(data);
-
+        
+        svgS.selectAll("rect")
+            .data(data)
+            .join("rect")
+            .attr("x", (d,i) => i*80 + 20) //OHHH i is the ith rect, iterating
+            .attr("y", d => 300 - d.score*3) //y goes downward so want the sum of the bar height and space to be 400 so that level at bottom
+            .attr("width" , 40) 
+            .attr("height", d => d.score*3) //change based on score
+            .attr("fill", d => color(d.score)) //change green to red based on score
+            .attr("rx", 3)
+    
+        svgS.selectAll("text")
+            .data(data)
+            .join("text")
+            .attr("x", (d,i) => i*80 + 40)
+            .attr("y", 320)
+            .attr("text-anchor", "middle")
+            .text(d => d.name);
+            
+        svgS.selectAll(".name-label")
+            .data(data)
+            .join("text")
+            .attr("class", "name-label")
+            .attr("x", (d,i) => i*80 + 40)
+            .attr("y", 340)
+            .attr("text-anchor", "middle")
+            .text(d => d.score);
     });
+
+
+
+
+
