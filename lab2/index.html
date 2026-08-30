@@ -1,27 +1,88 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>Lab 2</title>
+    <title>Lab 2 - Multivariate Visualization</title>
 
+    <link rel="stylesheet"
+          href="../css/style.css">
 </head>
 
 <body>
 
-    <h1>Lab 2</h1>
-
-    <p>
-        Lab 2 will be added here.
-    </p>
-
+<header>
+    <h1>STATS 401</h1>
+    <p>Data Acquisition and Visualization</p>
     <a href="../index.html">
         Back to home
     </a>
+</header>
+
+<nav class="lab-nav">
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+    <a href="../lab4/index.html">Lab 4</a>
+    <a href="../lab5/index.html">Lab 5</a>
+    <a href="../lab6/index.html">Lab 6</a>
+    <a href="../lab7/index.html">Lab 7</a>
+    <a href="../lab8/index.html">Lab 8</a>
+    <a href="../lab9/index.html">Lab 9</a>
+    <a href="../lab10/index.html">Lab 10</a>
+</nav>
+
+<main>
+    <h2>Lab 2: Multivariate Visualization with D3</h2>
+
+    <p>
+        This visualization explores the relationship among
+        study hours, exam score, major, and year level.
+    </p>
+
+    <div id="chart"></div>
+
+    <h3>Multivariate Scatterplot: Cities </h3>
+    <div id="chart2"></div>
+    <p>
+        At first I started out mimicking the logic of the practice students visualization. 
+        I made the numerical attributes be the axes, with temperature being x and population being 
+        y because it might indicate a correlation in how population changes as temp does. Development 
+        level, since ordinal, I mapped to a size, to indicate if there's any trend in size following population 
+        and temp as well. Regions were categorical and so I just made into color to let them stand out and be  
+        easily seen as families or clusters. The city names are visible when hovered (like the student names) 
+    </p> 
+
+    <h3>Non-scatterplot Compass Visualization of Cities</h3>
+    <div id="chart3"></div>
+    <p>
+        I also had a second idea to make the regions be visually represented by literally putting the regions 
+        spots where they might be on a compass. I believed this could be interesting. But I decided to bring the 
+        regions together into their own clusters, so I took the average of the populations and temps. 
+        This means that some of the individual data points are lost, we don't know if the average is actually representative, 
+        especially for West and North that you can see are not so clustered in the scatterplot. Population size is again
+        instinctively the size of the bubbles and the temperatures are more instinctively red for hot and blue for cold. 
+        Development level I decided a thick outline being high development. Even though this visualization isn't the best, you can 
+        still tell higher temperatures bring higher population and higher development. East and West regions seem to be nice spots to live in.
+        (*Disclosure: I did have have to learn and understand finding the average of the values. Claude
+        also helped me with the more complex and extensive legends I wanted to add to help with understanding.)
+    </p> 
+
+    <h3>Compass Visualization of Cities - no averages</h3>
+    <div id="chart4"></div>
+    <p>
+        Last version I wanted to play with! I figured an improvement could be having individual bubbles for each city in their region cluster. 
+        Interestingly, you can see how the previous visualization with the averages might be representative for some regions but misleading 
+        for others. 
+    </p> 
+
+    <div id="tooltip" class="tooltip"></div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="lab2.js"></script>
 
 </body>
-
 </html>
