@@ -41,6 +41,7 @@ d3.csv("../data/students.csv", d => ({
             .attr("y", 340)
             .attr("text-anchor", "middle")
             .text(d => d.score);
+        
     });
 
 
