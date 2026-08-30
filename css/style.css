@@ -56,6 +56,17 @@ p {
     fill: #333;
 }
 
+.tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid #aaa;
+    padding: 8px 10px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    font-size: 14px;
+}
+
 #chart svg {
     background: #faf7f0;
     border: 1px solid #d9d2c5;
