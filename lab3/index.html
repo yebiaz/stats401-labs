@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 3</title>
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <h1>Lab 3</h1>
+<h1>Lab 3</h1>
 
-    <p>
-        Lab 3 will be added here.
-    </p>
+<nav class="lab-nav">
+    <a href="../index.html">Home</a>
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+</nav>
 
-    <a href="../index.html">
-        Back to home
-    </a>
+<h2>Lab 3: Web Data Acquisition: Met Ceramics</h2>
+
+<p>
+    <strong>Dataset:</strong> Ceramic objects in the Metropolitan Museum of Art collection<br>
+    <strong>Source:</strong> The Met Collection API (collectionapi.metmuseum.org) which is open for public use<br>
+    <strong>Method:</strong> API requests using Python and the requests library.
+    I made 6 searches (porcelain, stoneware, earthenware, terracotta, celadon, glazed ceramic)
+    and filtered to the Ceramics medium, which returned object IDs and then for each object, I 
+    requested for its attributes. I took and renamed 6 of the 12 attributes, the ones that were most useful to a user.<br>
+    <strong>Records:</strong>1292<br>
+</p>
+
+<div id="filters"></div>
+
+<button id="reset-button">Reset</button>
+
+<p id="row-count"></p>
+
+<table id="data-table">
+    <thead></thead>
+    <tbody></tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="lab3.js"></script>
 
 </body>
-
 </html>
