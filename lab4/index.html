@@ -1,27 +1,53 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 4</title>
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <h1>Lab 4</h1>
+<h1>Lab 4</h1>
 
-    <p>
-        Lab 4 will be added here.
-    </p>
+<nav class="lab-nav">
+    <a href="../index.html">Home</a>
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+    <a href="../lab4/index.html">Lab 4</a>
+</nav>
 
-    <a href="../index.html">
-        Back to home
-    </a>
+<h2>Lab 4:Cleaning Web Data for Visualization / Sentiment Analysis</h2>
+
+<p>
+    <strong>Dataset:</strong> FILL IN<br>
+    <strong>Source:</strong>Kaggle: https://www.kaggle.com/datasets/austinreese/trump-tweets?resource=download<br>
+</p>
+
+<h3>Sentiment counts by year</h3>
+<div id="chart-counts"></div>
+
+<h3>Average sentiment score by year</h3>
+<div id="chart-trend"></div>
+
+<div id="tooltip" class="tooltip"></div>
+
+<p id="analysis">
+    I used a Kaggle dataset of Trump's tweets over the years. I filtered for tweets written by Trump himself, removed duplicates, parsed the dates (since I wanted
+    to see trends over years), did category standardization and text normalization as taught. Many columns were completely
+    or partially empty so I dropped the geo, mentions, and hashtags columns. ID and link/urls I found no analytic use for, so I dropped. 
+    I found that the numeric fields had no weird numbers/formats or missing values. I also took 300 tweets from each year (instead of using 
+    all 40000 tweets which would have been an enormous runtime; though curious for future if I'd like to try again). 2009 and 2020 were partial years with only 56 and 181 tweets respectively so the visualization may be a bit off. I estimated sentiment as in the lab tasks 
+    with RoBERTa and got probabilities for negative, neutral, and positive classes and labelled tweets according to its highest class and calculated its continuous score. I encoded year (interval type)
+    onto the x axis and tweet count (ratio) on the y-axis. I also encoded the ordinal sentiment classes by color. I also just wanted to make a second little visualization to see
+    an average overall trend over the years so I made a line chart. It was interesting how in the first visualization, the negative tweets are going down, he's trying to gather support, it's 
+    nearing the election, and then in 2018, positive and negative tweets crossover with positive decreasing and negative increasing as he goes through presidency. You can see a slightly similar matching trend in the second visualization. But there is a peak of negative comments in 2011 (also in the second visualization,
+    there's a huge fall in negativity), I wonder if this is a true reflection of what he was doing in 2011 or a limitation of the dataset and code. 
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="lab4.js"></script>
 
 </body>
-
 </html>
