@@ -1,27 +1,49 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 5</title>
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <h1>Lab 5</h1>
+<h1>Lab 5</h1>
 
-    <p>
-        Lab 5 will be added here.
-    </p>
+<nav class="lab-nav">
+    <a href="../index.html">Home</a>
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+    <a href="../lab4/index.html">Lab 4</a>
+    <a href="../lab5/index.html">Lab 5</a>
+</nav>
 
-    <a href="../index.html">
-        Back to home
-    </a>
+<h2>Lab 5: Network Visualization</h2>
+<h3>Dataset Description</h3>
+<p>NOT DONE YET</p>
+
+<h3>Node-link diagram</h3>
+<div id="network"></div>
+
+<h3>Node-Link Design Description</h3>
+<p> 
+    With district being a categorical attribute without too many bins, I decided it could be encoded with color hue. Passengers felt intuitive to be encoded with size, since it's a magnitude channel and the bigger a station, the more people "fill" it up. I made station type shape since it's categorical and could describe the form of the station. I think it could be even cooler if terminal was an airplane shape, transfer could be an arrow, and local could be a circle. Travel time is quantitative, so I encoded it with line thickness, another magnitude channel. I inverted the scale so shorter travel times are thicker, because thickness could be read as connection “strength” and a 2-minute hop is a stronger link than a 16-minute one. Route type is nominal so I encoded it with a dash pattern: solid, dashed, or dotted. I was worried at first that it wouldn’t be separable from thickness, but after testing, I could see stroke width and stroke dashing are independent properties, and they don’t interfere. 
+    But it is still difficult to digest the whole diagram at once. There are many attributes, some not that intuitive, and just by there being so many it's an overload. Interaction does help because hovering helps highlight certain nodes. Dragging also lets me pull a cluster apart to check whether nodes that look adjacent are actually connected. For finding which stations appear central, I view as the stations or nodes that have the highest degree or the highest number of connections, such as station 31 and 34 (which are often terminals). This connects to question 3 because it’s easy to digest the shapes, and it seems like terminals sit central in the topology and transfer stations are in line with a few stations but not really serving as hubs, but I am not completely sure of this interpretation. Question 2 is even harder though. It's difficult to see which districts are connected often just by looking at it and difficult to find a pattern like if central blue is often with east yellow. Size and thickness are a easier to see, so questions 4 and 5 can be interpreted. The busiest stations are when I see a node of high size and hover over to check the number, like station 40 and 47 with over 8000 passengers. The longest connection (or thinnest line) I see is between stations 18 and 34. Question 6 is difficult because dash pattern is a weak channel with very low pop-out, and so like with question 2, I have to inspect each link individually rather than perceiving a pattern to understand if particular route types are concentrated in parts of the network. 
+</p>
+
+<h3>Adjacency matrix</h3>
+<div id="matrix"></div>
+<h3>Matrix Design Description</h3>
+<p> 
+    For the matrix, for the node attributes, I decided they would be encoded in the text of the labels, so color of the text determines district, and station type is shown by being bold, italic, or normal (which was not ideal but the idea I resorted to to maximize attributes encoded). Passenger volume was a difficult encoding but the only way I could think to differentiate was a circle sits next to each station name, where a small circle encodes under 4,199 daily passengers, medium is 4,199-7,024, and large is over 7,024 and above. I realize some information is lost on the precision of the quantities. Links I encoded with M for Metro, S for Shuttle, and E for Express in the squares, instead of the 1 you'd see in a normal adjacency matrix. The opacity of blue encodes how close by they are. There might be some relative rather than absolute judgements with the opacities: it's easier to say one cell is darker than its neighbor than to read a travel time off it. Hovering a cell gives both station names, the exact travel time, and the route type, which restores the precision that opacity give up. 
+
+With the adjacency matrix, it’s a lot easier to see which districts are connected once you order the rows by district. Like East with South and Central with West are often having connections. We can see diagonal blocks where there are connections in the districts. It's still difficult to tell with transfer and terminal stations since it's hard to visually digest the text stylings. Questions 4 and 5 are a bit simpler again since they are based on size of circle (though not the precise number) and opacity. Question 6 is still hard, because the letter glyph is also a nominal encoding on a weak channel.
+</p>
+<div id="tooltip" class="tooltip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="lab5.js"></script>
 
 </body>
-
 </html>
