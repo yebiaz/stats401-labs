@@ -1,28 +1,128 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 7</title>
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <h1>Lab 7</h1>
+<h1>Lab 7</h1>
 
-    <p>
-        Lab 7 will be added here.
-    </p>
+<nav class="lab-nav">
+    <a href="../index.html">Home</a>
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+    <a href="../lab4/index.html">Lab 4</a>
+    <a href="../lab5/index.html">Lab 5</a>
+    <a href="../lab6/index.html">Lab 6</a>
+</nav>
 
-    <a href="../index.html">
-        Back to home
-    </a>
+<h2>Lab 7: Temporal Data Visualization</h2>
+
+<label for="metric">Metric:</label>
+<select id="metric">
+    <option value="temperature_c">Temperature</option>
+    <option value="humidity_pct">Humidity</option>
+    <option value="wind_speed_mps">Wind Speed</option>
+    <option value="pressure_hpa">Pressure</option>
+    <option value="precipitation_mm">Precipitation</option>
+</select>
+
+<div id="chart"></div>
+<input type="date" id="start-date">
+<input type="date" id="end-date">
+
+<button id="apply-range">
+    Apply Range
+</button>
+
+<button id="play">Play</button>
+<button id="pause">Pause</button>
+<button id="reset">Reset</button>
+
+<input
+    type="range"
+    id="time-slider"
+    min="0"
+    max="179"
+    value="0">
+
+<div id="tooltip" class="tooltip"></div>
+
+<!-- ============================================================
+     LAB 7 ASSIGNMENT
+     Paste this into lab7/index.html, BELOW your tasks chart
+     and ABOVE the <script> tags at the bottom.
+     ============================================================ -->
+
+     <hr>
+
+     <h2>Assignment: Animated Temporal Commercial Network</h2>
+     
+     <p>
+         <strong>Dataset:</strong> 12 companies and their commercial
+         transactions across 60 days<br>
+     </p>
+     
+     <h3>Overview — active relationships per day</h3>
+     
+     <div id="assignment-overview"></div>
+     
+     <div id="a-controls">
+         <button id="a-play">Play</button>
+         <button id="a-pause">Pause</button>
+         <button id="a-reset">Reset</button>
+     
+         <input
+             type="range"
+             id="a-slider"
+             min="1"
+             max="60"
+             value="1">
+     
+         <span id="a-day-label"></span>
+     </div>
+     
+     <p id="a-summary"></p>
+     
+     <div id="assignment-network"></div>
+     
+     <div id="a-tooltip" class="tooltip"></div>
+     
+     <h3>Temporal Network Questions</h3>
+     
+     <p>
+         <strong>1. How does overall network connectivity change across the 60 days?</strong><br>
+         To help with this question, I created an overview line chart (so getting the positives of both worlds of static and dynamic visualizations). Overall relationships fluctuates quite a lot between 3 and 9 but then for days 20-40 it was pretty consistently at about 5. Maybe this is where relations between companies were stable and consistent. After day 40, it went back to fluctuating (though less tightly) between 4 and 8. The periods of fluctuation might reflect more diversified connections? So even if a company commonly has transactions with another company, it might have many more companies it sometimes interacts with. 
+     </p>
+     
+     <p>
+         <strong>2. Which companies become more central or commercially active over time?</strong><br>
+         Cedar retail becomes more active over time. It becomes bigger in size and becomes more connected/has higher degrees toward the latter end of the time duration. 
+Fusion electronics gets active faster/earlier than Cedar retail but never reaches the size peak cedar retail is able to and isn’t as consistent towards the end, is alternating between highly connected and not at all towards the end. 
+     </p>
+     
+     <p>
+         <strong>3. Are there periods when the network consists of relatively separate clusters?</strong><br>
+         Yes, on days like 10 and 21, there are 3 clusters, although two of the clusters are only between two companies/nodes. Most interesting to me are days like 44 and 46 because the clusters are a bit bigger or like cliques (like triangles) or there’s just one in the center (stars). In days like 51 and 57, every single company is active and has at least one connection, however, there are three clusters! 
+     </p>
+     
+     <p>
+         <strong>4. Which commercial relationships appear, disappear, or become stronger over time?</strong><br>
+         Fusion Electronics used to alternate between relationships with Cedar Retail and granite Wholesale until about day 30, when it committed to a strong/consistent relationship with Granite Wholesale. Then Fusion Electronics kinda turned completely after day 40 and became stronger with Ion Systems, Apex and Delta (which makes more sense with its tech and manufacturing company anyways). I think it’s difficult to keep track of so many relationships though, like which to focus on, which to not be distracted by as I keep resetting the animation. I think this is a reflection of our selective attention and the limitations of node-link diagrams. Something to look at that helps though is seeing the thicker lines indicating stronger relationships. 
+     </p>
+     
+     <p>
+         <strong>5. Does the network become more or less cross-regional over time?</strong><br>
+         I think more cross-regional , like apex textiles used to only work with Asia then worked with ion systems (North America), you see a lot of these transitions and overall see more shapes mixing together as time passes. This is especially because of the diverse hubs that connect diverse regions. An outlier I noticed though is Evergreen Foods. It never stepped outside of North American relationships. 
+     </p>
+
+     
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="lab7.js"></script>
 
 </body>
-
 </html>
