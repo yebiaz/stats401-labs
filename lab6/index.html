@@ -1,28 +1,62 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <title>Lab 6</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <h1>Lab 6</h1>
+<h1>Lab 6</h1>
 
-    <p>
-        Lab 6 will be added here.
-    </p>
+<nav class="lab-nav">
+    <a href="../index.html">Home</a>
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+    <a href="../lab4/index.html">Lab 4</a>
+    <a href="../lab5/index.html">Lab 5</a>
+    <a href="../lab6/index.html">Lab 6</a>
+</nav>
 
-    <a href="../index.html">
-        Back to home
-    </a>
+<h2>Lab 6: Hierarchical Data Visualization: Trees &amp; Treemaps</h2>
+
+<h3>Tree</h3>
+<div id="tree"></div>
+
+<h3>Treemap (squarify)</h3>
+<div id="treemap"></div>
+
+<h3>Treemap (slide-dice)</h3>
+<div id="treemap2"></div>
+
+<h2>Assignment: GDP Hierarchy</h2>
+
+<p>
+    <strong>Dataset:</strong> Provided GDP data, where there's a nest of continent, area, country and their respective GDPs and statuses.
+</p>
+
+<div id="gdp-legend"></div>
+
+<h3>Treemap 1 — Squarify</h3>
+<div id="gdp-treemap-1"></div>
+
+<h3>Treemap 2 — Slice-dice</h3>
+<div id="gdp-treemap-2"></div>
+
+<h3>Design Description</h3>
+<p>
+    I chose to encode gdp amount as area of the rectangle/square since its a quantitative attribute and it’s intuitive for the bigger the area to be the bigger the gdp as a pop-out effect. And the precision of the area differences that may be missed or hard to compare among squares in the visualization can be further seen in detail by hovering over the country. Status I encoded by color hue since it’s an ordinal attribute, and there aren’t too many bins so they’re still discriminable and orange is intuitive to be negative/decreasing and blue positive/increasing and gray a neutral color. Also at first I was going to do light blue, mid blue, and dark blue but I think the neutral middle gray and the opposite colors orange and blue going in opposite directions makes more sense for the positive/negative nature of this attribute. Squarify I already knew might be better and more readable of the hierarchy since country and continents are not ordered and the low aspect ratio / near squareness would make it easier to interpret area and thus size. Indeed, slice and dice is less readable/comparable, with many more very thin rectangles, some not even noticeable until you hover over them, and many names of countries not visible without hovering because the rectangles are too small to put text in. Even though slice and dice’s strength is showing order, that’s not really necessary for this particular situation and dataset. 
+</p>
+
+<div id="tooltip" class="tooltip"></div>
+
+<div id="tree"></div>
+<div id="treemap"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="lab6.js"></script>
 
 </body>
-
 </html>
