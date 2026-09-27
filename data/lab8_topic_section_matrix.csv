@@ -1,0 +1,55 @@
+formal_group,cluster_name,count,proportion
+A Liberal Arts Education at Duke Kunshan University,Career / Mindfulness / Advising,1,0.2
+A Liberal Arts Education at Duke Kunshan University,Prematriculation / Transfer / Matriculation,4,0.8
+Academic Advising and Support,Career / Mindfulness / Advising,11,0.9167
+Academic Advising and Support,Prematriculation / Transfer / Matriculation,1,0.0833
+Academic Procedures and Information,Career / Mindfulness / Advising,2,0.0124
+Academic Procedures and Information,Chem / Phys / Intgsci,1,0.0062
+Academic Procedures and Information,Incomplete / Withdrawal / Probation,102,0.6335
+Academic Procedures and Information,Physedu / Japanese / Italian,12,0.0745
+Academic Procedures and Information,Prematriculation / Transfer / Matriculation,44,0.2733
+"Admission, Scholarships and Financial Aid",Incomplete / Withdrawal / Probation,3,0.1765
+"Admission, Scholarships and Financial Aid",Physedu / Japanese / Italian,7,0.4118
+"Admission, Scholarships and Financial Aid",Prematriculation / Transfer / Matriculation,7,0.4118
+"Career Services, Study Away, and Research Opportunities",Career / Mindfulness / Advising,2,0.0769
+"Career Services, Study Away, and Research Opportunities",Incomplete / Withdrawal / Probation,5,0.1923
+"Career Services, Study Away, and Research Opportunities",Prematriculation / Transfer / Matriculation,19,0.7308
+Course Descriptions,Asia / Migration / Ethnic,66,0.1061
+Course Descriptions,Audio / Digital / Mediart,64,0.1029
+Course Descriptions,Authoritarian / Regulatory / Polsci,55,0.0884
+Course Descriptions,Behavsci / Neurosci / Psych,34,0.0547
+Course Descriptions,Career / Mindfulness / Advising,17,0.0273
+Course Descriptions,Chem / Phys / Intgsci,67,0.1077
+Course Descriptions,Compsci / Algorithms / Math,61,0.0981
+Course Descriptions,Econ / Pricing / Microeconomics,49,0.0788
+Course Descriptions,Physedu / Japanese / Italian,104,0.1672
+Course Descriptions,Violence / Migration / Migrations,105,0.1688
+Financial Information,Asia / Migration / Ethnic,1,0.0333
+Financial Information,Incomplete / Withdrawal / Probation,21,0.7
+Financial Information,Physedu / Japanese / Italian,6,0.2
+Financial Information,Prematriculation / Transfer / Matriculation,2,0.0667
+General Information,Asia / Migration / Ethnic,1,0.0526
+General Information,Career / Mindfulness / Advising,2,0.1053
+General Information,Physedu / Japanese / Italian,1,0.0526
+General Information,Prematriculation / Transfer / Matriculation,14,0.7368
+General Information,Violence / Migration / Migrations,1,0.0526
+Major Programs,Asia / Migration / Ethnic,20,0.1667
+Major Programs,Audio / Digital / Mediart,6,0.05
+Major Programs,Authoritarian / Regulatory / Polsci,13,0.1083
+Major Programs,Behavsci / Neurosci / Psych,8,0.0667
+Major Programs,Career / Mindfulness / Advising,11,0.0917
+Major Programs,Chem / Phys / Intgsci,14,0.1167
+Major Programs,Compsci / Algorithms / Math,10,0.0833
+Major Programs,Econ / Pricing / Microeconomics,6,0.05
+Major Programs,Physedu / Japanese / Italian,21,0.175
+Major Programs,Violence / Migration / Migrations,11,0.0917
+Requirements for All Majors,Physedu / Japanese / Italian,4,1.0
+Student Affairs and Campus Life,Career / Mindfulness / Advising,17,0.5152
+Student Affairs and Campus Life,Incomplete / Withdrawal / Probation,3,0.0909
+Student Affairs and Campus Life,Physedu / Japanese / Italian,2,0.0606
+Student Affairs and Campus Life,Prematriculation / Transfer / Matriculation,10,0.303
+Student Affairs and Campus Life,Violence / Migration / Migrations,1,0.0303
+The Curriculum,Career / Mindfulness / Advising,14,0.2857
+The Curriculum,Compsci / Algorithms / Math,1,0.0204
+The Curriculum,Physedu / Japanese / Italian,20,0.4082
+The Curriculum,Prematriculation / Transfer / Matriculation,14,0.2857

@@ -1,0 +1,542 @@
+{
+  "parse": {
+    "outline_headings": 1142,
+    "raw_passages": 3124,
+    "clean_passages": 1098,
+    "excluded": "cover and table of contents (pp. 1-9), Part 11 academic calendar, Part 12 contacts"
+  },
+  "source": {
+    "title": "Bulletin of Duke Kunshan University: Undergraduate Instruction",
+    "version": "2021-2022 (V2021-22)",
+    "url": "https://dku-web-admissions.s3.cn-north-1.amazonaws.com.cn/dkumain/files/V2021-22_DKU_UG_Bulletin.pdf",
+    "pages": 400
+  },
+  "stats": {
+    "passages": 1098,
+    "avg_words": 87.7,
+    "median_words": 86.5,
+    "chapters": 10,
+    "sections": 77,
+    "formal_groups": 12
+  },
+  "method": {
+    "embedding_model": "all-MiniLM-L6-v2",
+    "embedding_method": "sentence-transformers",
+    "embedding_dimensions": 384,
+    "projection_method": "umap",
+    "projection_settings": {
+      "n_components": 2,
+      "n_neighbors": 15,
+      "min_dist": 0.15,
+      "metric": "cosine",
+      "random_state": 401
+    },
+    "clustering": "KMeans on normalized embeddings, k=12"
+  },
+  "by_group": [
+    {
+      "formal_group": "Course Descriptions",
+      "passages": 622,
+      "avg_words": 95.6
+    },
+    {
+      "formal_group": "Academic Procedures and Information",
+      "passages": 161,
+      "avg_words": 94.7
+    },
+    {
+      "formal_group": "Major Programs",
+      "passages": 120,
+      "avg_words": 60.1
+    },
+    {
+      "formal_group": "The Curriculum",
+      "passages": 49,
+      "avg_words": 77.9
+    },
+    {
+      "formal_group": "Student Affairs and Campus Life",
+      "passages": 33,
+      "avg_words": 76.3
+    },
+    {
+      "formal_group": "Financial Information",
+      "passages": 30,
+      "avg_words": 46.7
+    },
+    {
+      "formal_group": "Career Services, Study Away, and Research Opportunities",
+      "passages": 26,
+      "avg_words": 88.7
+    },
+    {
+      "formal_group": "General Information",
+      "passages": 19,
+      "avg_words": 89.8
+    },
+    {
+      "formal_group": "Admission, Scholarships and Financial Aid",
+      "passages": 17,
+      "avg_words": 50.4
+    },
+    {
+      "formal_group": "Academic Advising and Support",
+      "passages": 12,
+      "avg_words": 82.7
+    },
+    {
+      "formal_group": "A Liberal Arts Education at Duke Kunshan University",
+      "passages": 5,
+      "avg_words": 125.4
+    },
+    {
+      "formal_group": "Requirements for All Majors",
+      "passages": 4,
+      "avg_words": 31.5
+    }
+  ],
+  "top_terms": [
+    {
+      "term": "chinese",
+      "count": 400
+    },
+    {
+      "term": "social",
+      "count": 278
+    },
+    {
+      "term": "academic",
+      "count": 273
+    },
+    {
+      "term": "term",
+      "count": 251
+    },
+    {
+      "term": "global",
+      "count": 243
+    },
+    {
+      "term": "world",
+      "count": 240
+    },
+    {
+      "term": "political",
+      "count": 231
+    },
+    {
+      "term": "china",
+      "count": 212
+    },
+    {
+      "term": "study",
+      "count": 206
+    },
+    {
+      "term": "topics",
+      "count": 193
+    },
+    {
+      "term": "science",
+      "count": 191
+    },
+    {
+      "term": "history",
+      "count": 186
+    },
+    {
+      "term": "major",
+      "count": 185
+    },
+    {
+      "term": "cultural",
+      "count": 176
+    },
+    {
+      "term": "research",
+      "count": 169
+    },
+    {
+      "term": "health",
+      "count": 169
+    },
+    {
+      "term": "studies",
+      "count": 160
+    },
+    {
+      "term": "work",
+      "count": 158
+    },
+    {
+      "term": "issues",
+      "count": 148
+    },
+    {
+      "term": "skills",
+      "count": 144
+    },
+    {
+      "term": "policy",
+      "count": 142
+    },
+    {
+      "term": "life",
+      "count": 141
+    },
+    {
+      "term": "culture",
+      "count": 135
+    },
+    {
+      "term": "language",
+      "count": 133
+    },
+    {
+      "term": "grade",
+      "count": 132
+    }
+  ],
+  "section_terms": {
+    "A Liberal Arts Education at Duke Kunshan University": [
+      "colleges",
+      "arts colleges",
+      "small",
+      "solving",
+      "liberal arts",
+      "ability",
+      "liberal",
+      "problem"
+    ],
+    "Academic Advising and Support": [
+      "academic success",
+      "advising",
+      "success",
+      "academic advising",
+      "advisors",
+      "strategies",
+      "success program",
+      "tutoring"
+    ],
+    "Academic Procedures and Information": [
+      "underload",
+      "incomplete",
+      "probation",
+      "dean",
+      "academic probation",
+      "dean undergraduate",
+      "grade",
+      "instructor"
+    ],
+    "Admission, Scholarships and Financial Aid": [
+      "applicants",
+      "regular decision",
+      "mid",
+      "admission",
+      "early decision",
+      "application deadline",
+      "slate",
+      "january"
+    ],
+    "Career Services, Study Away, and Research Opportunities": [
+      "study away",
+      "preapproved",
+      "away",
+      "services office",
+      "summer",
+      "office global",
+      "career",
+      "costs"
+    ],
+    "Course Descriptions": [
+      "topics",
+      "political",
+      "texts",
+      "math",
+      "gender",
+      "media",
+      "compsci",
+      "introduction"
+    ],
+    "Financial Information": [
+      "deposit",
+      "usd",
+      "fee",
+      "campus deposit",
+      "tuition",
+      "rmb",
+      "charge",
+      "refund"
+    ],
+    "General Information": [
+      "city",
+      "chancellor",
+      "wuhan",
+      "executive vice",
+      "knowledge service",
+      "service society",
+      "cultures",
+      "higher education"
+    ],
+    "Major Programs": [
+      "political",
+      "environmental",
+      "molecular",
+      "media",
+      "economics",
+      "electives",
+      "computational",
+      "science"
+    ],
+    "Requirements for All Majors": [
+      "eap",
+      "track",
+      "eap eap",
+      "language",
+      "woc",
+      "english",
+      "required following",
+      "listed major"
+    ],
+    "Student Affairs and Campus Life": [
+      "residence life",
+      "residence",
+      "dukekunshan",
+      "dukekunshan edu",
+      "excursions",
+      "https dukekunshan",
+      "clubs",
+      "arts culture"
+    ],
+    "The Curriculum": [
+      "mini",
+      "mini term",
+      "divisional",
+      "interdisciplinary community",
+      "divisional area",
+      "total required",
+      "attribute",
+      "requirement"
+    ]
+  },
+  "cluster_terms": {
+    "0": [
+      "audio",
+      "digital",
+      "mediart",
+      "media arts",
+      "storytelling",
+      "curation",
+      "documentary",
+      "editing",
+      "video",
+      "film"
+    ],
+    "1": [
+      "physedu",
+      "language learning",
+      "japanese",
+      "chinese equivalent",
+      "chinese chinese",
+      "equivalent chinese",
+      "chinese heritage",
+      "reading writing",
+      "italian",
+      "advanced chinese"
+    ],
+    "2": [
+      "prematriculation",
+      "transfer",
+      "prior matriculation",
+      "matriculation",
+      "ipc prematriculation",
+      "precollege",
+      "graduation",
+      "ipc",
+      "honesty",
+      "wuhan"
+    ],
+    "3": [
+      "econ",
+      "econ econ",
+      "pricing",
+      "microeconomics",
+      "environmental justice",
+      "efficiency",
+      "markets",
+      "envir",
+      "economics public",
+      "public sector"
+    ],
+    "4": [
+      "violence",
+      "migration",
+      "migrations",
+      "relig",
+      "war",
+      "religious",
+      "arendt",
+      "justice",
+      "refugees",
+      "gender"
+    ],
+    "5": [
+      "authoritarian",
+      "regulatory",
+      "polsci",
+      "democratic",
+      "judges",
+      "democracy",
+      "regulatory institutions",
+      "authoritarian regimes",
+      "populism",
+      "democracies"
+    ],
+    "6": [
+      "compsci",
+      "algorithms",
+      "data science",
+      "compsci compsci",
+      "math math",
+      "math",
+      "distributions",
+      "theorem",
+      "software",
+      "bayesian"
+    ],
+    "7": [
+      "incomplete",
+      "withdrawal",
+      "probation",
+      "leave absence",
+      "underload",
+      "probationary",
+      "probationary status",
+      "grade",
+      "academic warning",
+      "load"
+    ],
+    "8": [
+      "chem",
+      "phys",
+      "intgsci",
+      "quantum",
+      "chemistry",
+      "chem chem",
+      "physics",
+      "biol",
+      "molecular",
+      "chemical"
+    ],
+    "9": [
+      "behavsci",
+      "neurosci",
+      "behavioral science",
+      "psych",
+      "neuroscience",
+      "political psychology",
+      "cognitive",
+      "brain",
+      "computational social",
+      "behavsci behavsci"
+    ],
+    "10": [
+      "interdisciplinary community",
+      "academic advising",
+      "career",
+      "big questions",
+      "mindfulness",
+      "graduate school",
+      "advising",
+      "residence life",
+      "academic success",
+      "topics seminar"
+    ],
+    "11": [
+      "asia",
+      "migration",
+      "ethnic",
+      "reform",
+      "alliance",
+      "chinese literature",
+      "south asia",
+      "chinese economy",
+      "socialist",
+      "buddhism"
+    ]
+  },
+  "diversity": [
+    {
+      "formal_group": "Major Programs",
+      "passages": 120,
+      "topics_present": 10,
+      "entropy": 3.203
+    },
+    {
+      "formal_group": "Course Descriptions",
+      "passages": 622,
+      "topics_present": 10,
+      "entropy": 3.19
+    },
+    {
+      "formal_group": "Student Affairs and Campus Life",
+      "passages": 33,
+      "topics_present": 5,
+      "entropy": 1.727
+    },
+    {
+      "formal_group": "The Curriculum",
+      "passages": 49,
+      "topics_present": 4,
+      "entropy": 1.675
+    },
+    {
+      "formal_group": "Admission, Scholarships and Financial Aid",
+      "passages": 17,
+      "topics_present": 3,
+      "entropy": 1.496
+    },
+    {
+      "formal_group": "General Information",
+      "passages": 19,
+      "topics_present": 5,
+      "entropy": 1.337
+    },
+    {
+      "formal_group": "Academic Procedures and Information",
+      "passages": 161,
+      "topics_present": 5,
+      "entropy": 1.332
+    },
+    {
+      "formal_group": "Financial Information",
+      "passages": 30,
+      "topics_present": 4,
+      "entropy": 1.249
+    },
+    {
+      "formal_group": "Career Services, Study Away, and Research Opportunities",
+      "passages": 26,
+      "topics_present": 3,
+      "entropy": 1.073
+    },
+    {
+      "formal_group": "A Liberal Arts Education at Duke Kunshan University",
+      "passages": 5,
+      "topics_present": 2,
+      "entropy": 0.722
+    },
+    {
+      "formal_group": "Academic Advising and Support",
+      "passages": 12,
+      "topics_present": 2,
+      "entropy": 0.414
+    },
+    {
+      "formal_group": "Requirements for All Majors",
+      "passages": 4,
+      "topics_present": 1,
+      "entropy": -0.0
+    }
+  ]
+}
