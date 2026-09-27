@@ -1,0 +1,147 @@
+CLUSTER REPORT — use this to name each topic
+======================================================================
+
+CLUSTER 0   (70 passages)
+Draft label : Audio / Digital / Mediart
+Top terms   : audio, digital, mediart, media arts, storytelling, curation, documentary, editing, video, film
+Sections    : Course Descriptions (64); Major Programs (6)
+Most representative passages:
+  - [p0862, p.332] MEDIART 210 Media and Arts Practicum (4 credits) For students of media, it is vital to have some skills in media production or art practice. This course will introduce students to some practical aspects of media and the 
+  - [p0843, p.328] MEDIART 101 Introduction to Media Studies and the Arts (4 credits) Media Studies and the Arts explores the cultural significance of the media in the contemporary world. It is a cross-disciplinary field that draws on comm
+  - [p0863, p.332] MEDIART 211 Media, Arts, and Critical Theory (4 credits) The course explores key issues in the study of digital media from its beginning to very recent theoretical developments. Central themes of the course generally inc
+  - [p0452, p.181] Understanding of media and the arts is foundational to the concept of interdisciplinarity that is the basis for a liberal arts education at Duke Kunshan University. On the one hand, exposure to the arts provides for the 
+  - [p0845, p.328] MEDIART 104 Introduction to Photography (4 credits) An emphasis on how to see with the camera and ways of thinking about photographs. Class assignments accompanied by historical and theoretical readings, lectures, class 
+  - [p0870, p.334] MEDIART 302 Contemporary Documentary Film (4 credits) Our subject is the art, content, technology, and life of documentary film. We will study contemporary filmmaking approaches that fall under broad categorization of "d
+
+CLUSTER 1   (177 passages)
+Draft label : Physedu / Japanese / Italian
+Top terms   : physedu, language learning, japanese, chinese equivalent, chinese chinese, equivalent chinese, chinese heritage, reading writing, italian, advanced chinese
+Sections    : Course Descriptions (104); Major Programs (21); The Curriculum (20); Academic Procedures and Information (12)
+Most representative passages:
+  - [p0423, p.142] And an additional 4-credit Chinese History course (200-400 level) (i.e., history 4 courses among the electives recommended for this major)
+  - [p0519, p.235] CHINESE 101A Beginning Chinese 1 – A (2 credits) This course is for students with little or no knowledge of the Chinese language, and is designed for building basic communicative proficiency in Mandarin Chinese. The cour
+  - [p0523, p.236] CHINESE 131A First Year Chinese for Heritage Learners 1 – A (2 credits) This course is designed for CSL track students who were raised in a Chinese-speaking environment and who are proficient in speaking and listening to
+  - [p0521, p.235] CHINESE 102A Beginning Chinese 2 – A (2 credits) This course continues teaching basic communicative proficiency in Mandarin Chinese. As with CHINESE 101, the course teaches speaking, listening, reading, and writing skill
+  - [p0528, p.237] CHINESE 202A Intermediate Chinese 2 – A (2 credits) This course is designed to help students continue building basic communicative proficiency in Mandarin Chinese. The primary emphasis is on oral communication skills, wi
+  - [p0532, p.238] CHINESE 232A Second Year Chinese for Heritage Learners 2 – A (2 credits) This course, a continuation of CHINESE 231, is designed to help Chinese heritage students continue improving their formal and informal discourse in
+
+CLUSTER 2   (115 passages)
+Draft label : Prematriculation / Transfer / Matriculation
+Top terms   : prematriculation, transfer, prior matriculation, matriculation, ipc prematriculation, precollege, graduation, ipc, honesty, wuhan
+Sections    : Academic Procedures and Information (44); Career Services, Study Away, and Research Opportunities (19); General Information (14); The Curriculum (14)
+Most representative passages:
+  - [p0147, p.41] Approval forms for Duke Kunshan University students taking courses at institutions other than Duke Kunshan University and Duke University may be obtained online or from the Office of Global Education. Students wishing to
+  - [p0142, p.40] All coursework undertaken after matriculation as a full-time degree-seeking student at Duke Kunshan University must be at another accredited four-year institution in the United States or similarly accredited institution 
+  - [p0006, p.11] Duke Kunshan University is a Sino-American partnership of Duke University, Wuhan University and Kunshan city in Jiangsu province to create a world-class liberal arts and research university offering a range of academic p
+  - [p0132, p.38] First-year Duke Kunshan students may submit for evaluation college courses taken at another accredited college or university after commencement of the student’s junior year of high school. (For details concerning transfe
+  - [p0063, p.24] Duke Kunshan University adheres to the academic standards upheld by Duke University and the relevant requirements for graduation and degree awarding by the education administration authorities of China. All undergraduate
+  - [p0064, p.24] A total of 136 Duke Kunshan University credits is required for international students to graduate and obtain the degrees, inclusive of 34 Duke Kunshan University credits earned through courses taught or co-taught by Duke
+
+CLUSTER 3   (55 passages)
+Draft label : Econ / Pricing / Microeconomics
+Top terms   : econ, econ econ, pricing, microeconomics, environmental justice, efficiency, markets, envir, economics public, public sector
+Sections    : Course Descriptions (49); Major Programs (6)
+Most representative passages:
+  - [p0648, p.270] ENVIR 302 Environmental Economics & Policy (4 credits) The role of the environment in the theory and practice of economics. Topics include ways in which markets fail to efficiently allocate resources in the presence of p
+  - [p0616, p.260] ECON 302 Environmental Economics & Policy (4 credits) The role of the environment in the theory and practice of economics. Topics include ways in which markets fail to efficiently allocate resources in the presence of po
+  - [p0651, p.270] ENVIR 305 Environment and Development Economics in Developing Countries (4 credits) Course will focus on the major challenges developing countries face in balancing environmental management and economic growth. Class wil
+  - [p0608, p.258] ECON 101 Economics Principles (4 credits) Basic microeconomic concepts such as demand and supply, market structures and pricing, market efficiency and equilibrium. Macroeconomic concepts such as inflation, unemployment, 
+  - [p0623, p.262] ECON 315 Economics of the Public Sector (4 credits) Applies tools of intermediate micro economics to the public sector. Develops economic justifications for government intervention into the economy and examines and evalu
+  - [p0612, p.259] ECON 204 Intermediate Macroeconomics (4 credits) Intermediate level treatment of macroeconomic models, fiscal and monetary policy, inflation, unemployment, economic growth. Prerequisite(s): ECON 201
+
+CLUSTER 4   (118 passages)
+Draft label : Violence / Migration / Migrations
+Top terms   : violence, migration, migrations, relig, war, religious, arendt, justice, refugees, gender
+Sections    : Course Descriptions (105); Major Programs (11); General Information (1); Student Affairs and Campus Life (1)
+Most representative passages:
+  - [p0798, p.316] LIT 213 Literature and Global Citizenship (4 credits) What does it mean to be a global citizen? What can literature reveal about the social, cultural, and ethical dimensions of an increasingly interconnected world? What 
+  - [p0728, p.293] HIST 110 Historical Perspectives on Contemporary Global Issues (4 credits) This course takes a comparative historical approach to contemporary global issues in various temporal and geographical contexts. Students will fo
+  - [p0587, p.251] CULANTH 208 Global Migration and Ethics (4 credits) This course examines the current scholarship on the anthropology and interdisciplinary study of global migration, and the ethical predicaments at center of contemporary
+  - [p1063, p.385] SOCIOL 301 Race, Ethnicity, and Citizenship (4 credits) Race, ethnicity, and citizenship structure interactions and social change in all countries, and they also condition the forms of interaction that determine global p
+  - [p0416, p.132] This interdisciplinary major, drawing from fields such as philosophy, political theory, history, literature, religion, and the social and natural sciences, seeks to provide students with the specific expertise that is ne
+  - [p0780, p.312] LIT 105 The Epic of America (the novel) (4 credits) This course introduces a range of works from the US canon that engage the concept of travels in relation to the themes of race and slavery, gender and sexuality, and ci
+
+CLUSTER 5   (68 passages)
+Draft label : Authoritarian / Regulatory / Polsci
+Top terms   : authoritarian, regulatory, polsci, democratic, judges, democracy, regulatory institutions, authoritarian regimes, populism, democracies
+Sections    : Course Descriptions (55); Major Programs (13)
+Most representative passages:
+  - [p0964, p.359] POLSCI 201 Political Institutions and Processes (4 credits) The purpose of this course is to examine and understand issues related to political institutions and processes. The main topics that will be examined over the c
+  - [p0968, p.360] POLSCI 207 Democratic Institutions in America (4 credits) From the framing of the Constitution to the present day, the US has had unique political institutions and political culture, which have long arrested the minds of
+  - [p1018, p.371] PUBPOL 301 Political Analysis for Public Policy-Making (4 credits) How and why do policies come about? What is the role of media, non-governmental organizations, and politicians? Why do some issues attract the attention 
+  - [p0984, p.363] POLSCI 307 Political Economy of Institutions (4 credits) Without paying attention to institutions, one cannot understand why some societies are wealthy and others poor; why some are innovative and others un-creative; or 
+  - [p0962, p.359] POLSCI 105 Contemporary Political Ideologies (2 credits) The goal of this course is to understand the fundamental alternative political ideologies or theories that have shaped our world and to consider which political th
+  - [p1019, p.372] PUBPOL 303 Policy Choice as Value Conflict (4 credits) Public policy should be informed by evidence and facts, but it cannot be determined by them. People disagree about public policy not only because they disagree about
+
+CLUSTER 6   (72 passages)
+Draft label : Compsci / Algorithms / Math
+Top terms   : compsci, algorithms, data science, compsci compsci, math math, math, distributions, theorem, software, bayesian
+Sections    : Course Descriptions (61); Major Programs (10); The Curriculum (1)
+Most representative passages:
+  - [p0563, p.245] COMPSCI 101 Introduction to Computer Science (4 credits) As an introductory course for computer science, this course will bring you not only the fundamental knowledge on a variety of CS topics, but also the essential com
+  - [p0828, p.324] MATH 304 Numerical Analysis and Optimization (4 credits) This course covers Gaussian elimination, LU factorization, Cholesky decomposition, QR decomposition, Newton-Raphson method, binary search, convex function, convex 
+  - [p0566, p.246] COMPSCI 205 Computer Organization and Programming (4 credits) This course focuses on the following: computer structure, assembly language, instruction execution, addressing techniques, and digital representation of data.
+  - [p0826, p.323] MATH 302 Numerical Analysis (4 credits) Introductory course on numerical analysis. Topics include: Development of numerical techniques for accurate, efficient solution of problems in science, engineering, and mathematics
+  - [p0837, p.326] MATH 405 Mathematics of Data Analysis and Machine Learning (4 credits) Geometry of high dimensional data sets. Linear dimension reduction, principal component analysis, kernel methods. Nonlinear dimension reduction, mani
+  - [p0565, p.246] COMPSCI 203 Discrete Math for Computer Science (4 credits) This course focuses on the following: mathematical notations, logic, and proof; linear and matrix algebra; graphs, digraphs, trees, representations, and algorith
+
+CLUSTER 7   (134 passages)
+Draft label : Incomplete / Withdrawal / Probation
+Top terms   : incomplete, withdrawal, probation, leave absence, underload, probationary, probationary status, grade, academic warning, load
+Sections    : Academic Procedures and Information (102); Financial Information (21); Career Services, Study Away, and Research Opportunities (5); Admission, Scholarships and Financial Aid (3)
+Most representative passages:
+  - [p0244, p.61] Students who wish to withdraw from the university must give official notification to the Office of Undergraduate Studies. Notification must be received prior to the beginning of classes in any term, or tuition and housin
+  - [p0153, p.42] Withdrawing from a course differs from dropping a course. Students drop the course themselves during the Drop/Add period, and the course does not appear on their official transcript. To withdraw from a course after the D
+  - [p0161, p.44] Students should take note that an underload may affect a student’s scholarship or ability to graduate on time; 8 additional credits above the minimum of 16 per term are needed in order to meet the 136 credits requirement
+  - [p0218, p.56] Students must achieve a satisfactory record of academic performance each term and make satisfactory progress toward graduation each year. Progress is assessed primarily by a student’s grade-point average. (See also the s
+  - [p0194, p.50] For purposes of determining satisfactory progress each term and toward graduation, incomplete work in a course indicated by a grade of I is not presumed to be satisfactory performance in that course. Because a grade of I
+  - [p0224, p.57] Students who receive an academic warning for failing to meet the term credit requirements may make up additional credits by enrolling in 20 credits in a subsequent term, enrolling in an overload once a positive academic 
+
+CLUSTER 8   (82 passages)
+Draft label : Chem / Phys / Intgsci
+Top terms   : chem, phys, intgsci, quantum, chemistry, chem chem, physics, biol, molecular, chemical
+Sections    : Course Descriptions (67); Major Programs (14); Academic Procedures and Information (1)
+Most representative passages:
+  - [p0507, p.231] CHEM 110 Integrated Science – Chemistry (4 credits) With an integrated approach, this course examines basic concepts and fundamental principles in chemistry based on the laws of physics. The course starts with an introdu
+  - [p0510, p.232] CHEM 150 General Chemistry II (4 credits) This course is the continuation of the Integrated Science - Chemistry continuum, including intermolecular forces, states of matter, aqueous ionic equilibrium and solubility equil
+  - [p0512, p.233] CHEM 301 Elements of Physical Chemistry (4 credits) The course introduces students to core concepts in physical chemistry including quantum chemistry, molecular structure, molecular spectroscopy, thermodynamics, and kine
+  - [p0506, p.231] CHEM 105: Chemistry in Context (4 credits) This course is a chemistry course aimed at students of non-science majors. Through the lenses of topical issues, this course allows students majoring in a non-science field to e
+  - [p0771, p.308] INTGSCI 101: Integrated Science 1 (4 credits) This course focuses on the concept of energy and its relevance for explaining the behavior of natural systems. The conservation of energy and the transformations of energy fr
+  - [p0508, p.231] CHEM 120 Core Concepts in Chemistry: An Environmental Perspective (4 credits) Current challenges and opportunities in environmental science require a foundational knowledge of core concepts in chemistry. In this course, 
+
+CLUSTER 9   (42 passages)
+Draft label : Behavsci / Neurosci / Psych
+Top terms   : behavsci, neurosci, behavioral science, psych, neuroscience, political psychology, cognitive, brain, computational social, behavsci behavsci
+Sections    : Course Descriptions (34); Major Programs (8)
+Most representative passages:
+  - [p0481, p.219] BEHAVSCI 102 Mechanisms of Human Behavior (4 credits) This course introduces students to the primary empirical approaches in behavioral science through a combination of directed readings and hands-on experience with the 
+  - [p0480, p.219] BEHAVSCI 101 Introduction to Behavioral Science (4 credits) This course provides a broad overview of the research methods and applications of behavioral science. It introduces core phenomena of human behavior including b
+  - [p0366, p.93] The twin goals of behavioral science – understanding mechanisms of individual behavior and developing policies that shape that behavior – require students to develop a knowledge base drawn from several disciplines. Empir
+  - [p0482, p.219] BEHAVSCI 201 Individuals and Their Decisions (4 credits) This course is a team-taught, question-driven introduction to the certificate and the fundamentals of how humans make decisions. The primary goal is to provide han
+  - [p0488, p.220] BEHAVSCI 401 Moving Beyond Nudges (4 credits) This capstone course explores the ethical issues associated with the rise of behavioral science, with particular focus on the intersections between individual autonomy and po
+  - [p0485, p.220] BEHAVSCI 204 Experimental Philosophy (4 credits) This course investigates the interrelations between the experimental methods of the social/neural sciences and the fundamental questions of philosophy. Students will consi
+
+CLUSTER 10   (77 passages)
+Draft label : Career / Mindfulness / Advising
+Top terms   : interdisciplinary community, academic advising, career, big questions, mindfulness, graduate school, advising, residence life, academic success, topics seminar
+Sections    : Student Affairs and Campus Life (17); Course Descriptions (17); The Curriculum (14); Academic Advising and Support (11)
+Most representative passages:
+  - [p0604, p.256] CULMOVE 390 Junior Seminar: Advanced Topics (4 credits) This seminar is a core component of the interdisciplinary major in Cultures and Movements. Students will apply to interdisciplinary topics the knowledge and methods
+  - [p0770, p.307] INSTGOV 490 Senior Seminar: Advanced Topics (4 credits) This seminar is a core component of the interdisciplinary major in Institutions and Governance. Students will apply to interdisciplinary topics the knowledge and me
+  - [p0605, p.257] CULMOVE 490 Senior Seminar: Advanced Topics (4 credits) This seminar is a core component of the interdisciplinary major in Cultures and Movements. Students will apply to interdisciplinary topics the knowledge and methods
+  - [p0060, p.23] Signature Work calls for each student to identify one or more questions, problems, or issues that are of particular importance to him or herself and to society, and to investigate these through a combination of curricula
+  - [p0026, p.16] The curriculum fosters learning communities of students and faculty whose intellectual interactions revolve around two groups: (1) The interdisciplinary community, which spans laterally a variety of disciplines. To the b
+  - [p0671, p.276] ETHLDR 490: Senior Seminar: Advanced Topics (4 credits) This seminar is a core component of the interdisciplinary major in Ethics and Leadership. Students will apply to interdisciplinary topics the knowledge and methods 
+
+CLUSTER 11   (88 passages)
+Draft label : Asia / Migration / Ethnic
+Top terms   : asia, migration, ethnic, reform, alliance, chinese literature, south asia, chinese economy, socialist, buddhism
+Sections    : Course Descriptions (66); Major Programs (20); General Information (1); Financial Information (1)
+Most representative passages:
+  - [p0693, p.284] GCULS 304 Chinese Culture and Ideology in the 20th Century and Now (4 credits) This course considers a variety of literary texts from the perspective of the nexus of cultures and societies in Asia, primarily on modern an
+  - [p0721, p.292] HIST 103 Premodern Chinese History (4 credits) The course introduces the foundations of modern China from the Song Dynasty up through the late imperial period (about 1800 CE to 1911). It will cover the major historical e
+  - [p0676, p.279] GCHINA 201 From Empire to Nation (4 credits) This course examines concepts and theories of empire, imperialism, colonialism, and the nation- state, with a particular focus on their circulation and impact in East Asia and
+  - [p0555, p.243] CHSC 102 Social Changes in China (6 credits) This course reviews the history in which how China, as an ancient civilization, has revived from the fallen state in modern times to a mighty power in today’s world, helping s
+  - [p0720, p.291] HIST 102 Medieval Chinese History (4 credits) This course examines what Hu Shi has called the “Indianization” of China. It traces the import of Buddhist ideas, values and practices from India and central Asia, and their 
+  - [p0749, p.299] HIST 302 China in Global Perspective 2: The Internationalization of Modern China (4 credits) This course studies how foreign relations have shaped modern China from the Opium War to Alibaba. Topics include commercializat
+

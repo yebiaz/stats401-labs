@@ -1,27 +1,182 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <title>Lab 8</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab 8</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="lab8.css">
 
 </head>
-
 <body>
 
-    <h1>Lab 8</h1>
+<h1>Lab 8</h1>
 
-    <p>
-        Lab 8 will be added here.
-    </p>
+<nav class="lab-nav">
+<a href="../index.html">Home</a>
+<a href="../lab1/index.html">Lab 1</a>
+<a href="../lab2/index.html">Lab 2</a>
+<a href="../lab3/index.html">Lab 3</a>
+<a href="../lab4/index.html">Lab 4</a>
+<a href="../lab5/index.html">Lab 5</a>
+<a href="../lab6/index.html">Lab 6</a>
+<a href="../lab7/index.html">Lab 7</a>
+<a href="../lab8/index.html">Lab 8</a>
+<a href="../project/index.html">Visualization Critique &amp; Redesign</a>
 
-    <a href="../index.html">
-        Back to home
-    </a>
+</nav>
+
+<h2>Lab 8: Web Text Data and Visualization — Exploring the DKU Bulletin</h2>
+
+
+<!-- ============================================================
+     1. BULLETIN / CORPUS DESCRIPTION  (Part A)
+     ============================================================ -->
+
+<section class="lab8-section">
+<h3>1. Bulletin and Corpus</h3>
+
+<p>
+    <strong>Document:</strong> Bulletin of Duke Kunshan University: Undergraduate Instruction<br>
+    <strong>Version:</strong> 2021–2022 (V2021-22), 400 pages<br>
+    <strong>Source:</strong>
+    <a href="https://dku-web-admissions.s3.cn-north-1.amazonaws.com.cn/dkumain/files/V2021-22_DKU_UG_Bulletin.pdf">
+        Official DKU admissions site (PDF)</a><br>
+</p>
+
+<p>
+    I chose to split the bulletin into passages using its own bookmark outline, which records
+    1,142 headings with their level and page. Each passage is a paragraph or
+    policy block, labelled with the chapter, section, and subsection it falls
+    under. Course descriptions I kept as one passage per course so that
+    course titles, descriptios, and prereqs stay together. The cover and
+    table of contents (pp. 1–9), the academic calendar, and the contact directory
+    were excluded because they are dates and phone numbers rather than prose.
+    Cleaning removed page numbers, table headers, requirement-table rows, and
+    fragments under 15 words.
+</p>
+
+<div id="corpus-stats" class="stat-row"></div>
+</section>
+
+
+<!-- ============================================================
+     2. CORPUS OVERVIEW  (Part B)
+     ============================================================ -->
+
+<section class="lab8-section">
+<h3>2. Corpus Overview</h3>
+
+<div class="two-col">
+    <div>
+        <h4>Passages by formal section</h4>
+        <p class="caption">Bar length is passage count; the label also gives average passage length.</p>
+        <div id="chart-by-section"></div>
+    </div>
+    <div>
+        <h4>Most frequent meaningful terms</h4>
+        <p class="caption">After removing common English and bulletin-wide words such as “student” and “university”.</p>
+        <div id="chart-top-terms"></div>
+    </div>
+</div>
+</section>
+
+
+<!-- ============================================================
+     3. SEMANTIC EMBEDDING MAP  (Part D)
+     ============================================================ -->
+
+<section class="lab8-section">
+<h3>3. Semantic Embedding Map</h3>
+
+<p class="caption">
+    Each point is one passage. Nearby points have similar meanings. Colour shows
+    the semantic topic and point size shows passage length. The x and y axes have
+    no meaning on their own — only distance between points does. Scroll to zoom,
+    drag to pan, click a point for details and its nearest neighbours.
+</p>
+
+<div class="controls">
+    <input type="text" id="search" placeholder="Search bulletin… e.g. credit">
+    <select id="section-filter"></select>
+    <select id="topic-filter"></select>
+    <button id="reset-zoom">Reset zoom</button>
+    <button id="clear-all">Clear all</button>
+</div>
+
+<p id="map-status" class="status"></p>
+
+<div class="map-layout">
+    <div>
+        <div id="semantic-map"></div>
+        <div id="topic-legend" class="topic-legend"></div>
+    </div>
+    <aside id="detail-panel"></aside>
+</div>
+</section>
+
+
+<!-- ============================================================
+     4. TOPIC x SECTION MATRIX  (Part E)
+     ============================================================ -->
+
+<section class="lab8-section">
+<h3>4. Topic × Bulletin Section Matrix</h3>
+
+<p class="caption">
+    Rows are formal bulletin sections, columns are semantic topics. Click a cell
+    to highlight exactly those passages on the map above. Selecting a point on
+    the map outlines its cell here in red.
+</p>
+
+<div class="controls">
+    <label><input type="radio" name="matrix-mode" value="proportion" checked>
+        Share of section (%)</label>
+    <label><input type="radio" name="matrix-mode" value="count">
+        Passage count</label>
+    <div id="matrix-legend"></div>
+</div>
+
+<div id="topic-matrix"></div>
+</section>
+
+
+<!-- ============================================================
+     5. SEMANTIC FINDINGS  (Part G — yours to write)
+     ============================================================ -->
+
+<section class="lab8-section">
+<h3>5. Semantic Findings</h3>
+
+<p><strong>1. What are the major semantic topics?</strong><br>
+    The clustering found 12 topics across the 1,098 passages. The top was Physedu /Japanese / Italian with 177, then Incomplete / Withdrawal / Probation with 134, Violence / Migration with 118, and Prematriculation / Transfer with 115. The tiniest was Behavsci / Neurosci / Psych with 42. What I noticed is that the topics fall into two kinds. Some are academic subjects and some are administrative, like withdrawal or transfer credit. The map shows this too with administrative clusters and academic ones lower down. </p>
+
+<p><strong>2. Which topics appear across multiple formal sections?</strong><br>
+    The administrative topics seem to be the ones that spread. Prematriculation / Transfer and Career / Mindfulness / Advising show up in most of the sections, because admissions rules and advising get mentioned wherever they're relevant, not just in their own chapter. The academic topics do the opposite sitting almost completely inside Course Descriptions and Major Programs, since that's the only place the bulletin talks about subjects. Except PE and languages since they might have more requirements. </p>
+
+<p><strong>3. Which formal sections contain the most semantically diverse content?</strong><br>
+    Course Descriptions has passages in nearly every topic column, which  makes sense for a course catalogue, since it has to cover every subject the university teaches. Major Programs is second in having the most for the same reason.</p>
+
+<p><strong>4. Which passages from different sections are semantically similar?</strong><br>
+    Academic Procedures and Financial Information are sections with similar semantics in the matrix, most likely because their rules on credits and payment mirror each other. Also Course Descriptions and Major Programs, which share most of their filled columns. Which makes sense because if a course shows up once in the catalogue with its description, it’ll show up again in the requirements list for its major, so the overlap is really just the bulletin cross-referencing itself.</p>
+</section>
+
+
+<!-- ============================================================
+     6. DESIGN DESCRIPTION  (Part H — yours to write)
+     ============================================================ -->
+
+<section class="lab8-section">
+<h3>6. Design Description</h3>
+<p>For this lab I turned the 400-page DKU Undergraduate Bulletin into a flat table of 1,098 passages and then built four views on top of it.
+    I chose to make the bars for section counting horizontal because when I made them vertical, the section names so long, I’d have to rotate the labels. I also put the average passage length in the label, showing whether a section is long prose or short lists.I also wanted to see what comes up most frequently, which turned out to be Chinese, social, and academic, which makes sense. For the semantic map I encoded topic as color hue and passage length as area. I used area because it’s a quantitative attribute and size is intuitive, and distinct hues don’t suggest ordinality. And to me, they seem still discriminable. Last, for the section × topic matrix I added a toggle between share of section and passage count. They tell opposite stories: Course Descriptions is 57% of the bulletin, so in count mode it drowns everything out, but in share mode it looks like nothing because its passages spread across every topic. What surprised me most was the isolated cluster on the far bottom left corner of the semantic map. Language and physical education course descriptions are written so formulaically that they end up nearly identical to each other and unlike everything else in the bulletin! The main limitation is that the cluster names are generated from top terms, so some of them describe the vocabulary rather than the actual content.</p>
+</section>
+
+
+<div id="lab8-tooltip" class="tooltip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="lab8.js"></script>
 
 </body>
-
 </html>
