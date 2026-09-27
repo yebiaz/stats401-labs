@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stull Chart Redesign</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<h1>Individual Project</h1>
+
+<nav class="lab-nav">
+    <a href="../index.html">Home</a>
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+    <a href="../lab4/index.html">Lab 4</a>
+    <a href="../lab5/index.html">Lab 5</a>
+    <a href="../lab6/index.html">Lab 6</a>
+    <a href="../lab7/index.html">Lab 7</a>
+    <a href="../lab8/index.html">Lab 8</a>
+</nav>
+
+<h2>Visualization Critique and Redesign</h2>
+
+<section id="part1">
+
+    <h2 class="part-heading">1. GitHub Pages Visualization</h2>
+
+    <h3>The original visualization</h3>
+
+    <figure class="fig">
+        <img src="figures/original-glazy-stull.png"
+             alt="Glazy's Stull chart: about twenty colored dots over green shaded regions, with no legend and no region labels.">
+        <figcaption>
+            <strong>Figure 1.</strong> The original &mdash; the Stull chart in
+            the Glazy.org recipe browser, showing only the recipes on the
+            current table page. Source:
+            <a href="https://glazy.org/recipes">glazy.org/recipes</a>,
+            accessed 27 September 2026.
+        </figcaption>
+    </figure>
+
+    <figure class="fig">
+        <img src="figures/original-axis-blowout.png"
+             alt="The same chart with axes running to 22 silica and 7.5 alumina, the Stull regions crushed into a small green triangle in the lower-left corner.">
+        <figcaption>
+            <strong>Figure 2.</strong> The same chart on page 277 of roughly
+            495. A few extreme analyses have stretched the axes to 22
+            SiO<sub>2</sub> and 7.5 Al<sub>2</sub>O<sub>3</sub>, compressing
+            the whole Stull diagram into about 4% of the plotting area.
+            Source: <a href="https://glazy.org/recipes?p=277">glazy.org/recipes?p=277</a>.
+        </figcaption>
+    </figure>
+
+    <h3>About the visualization and data</h3>
+
+    <p>
+        A glaze recipe is a list of raw materials, but what melts in the kiln
+        is the chemistry those materials add up to. The standard way to write
+        that chemistry is the <strong>Unity Molecular Formula</strong> (UMF),
+        which scales every recipe so its melter oxides sum to one, making any
+        two recipes directly comparable. A Stull chart plots two of those
+        oxides against each other: <strong>silica</strong>
+        (SiO<sub>2</sub>), the glass itself, across the bottom, and
+        <strong>alumina</strong> (Al<sub>2</sub>O<sub>3</sub>), which stiffens
+        the melt so it does not run off the pot, up the side.
+    </p>
+
+    <p>
+        R.T. Stull fired hundreds of test tiles in 1912 and mapped which
+        chemistries came out glossy, matte, underfired or crazed. Those mapped
+        zones are the shaded regions behind the points, and they fan out from
+        the origin because what actually governs the surface is not silica or
+        alumina alone but the <em>ratio</em> between them &mdash; and a fixed
+        ratio is a straight line from the origin.
+    </p>
+
+    <p>
+        After first trying to scrape Glazy, I found the data is already the official public export of the Glazy database,
+        published by Glazy's creator and licensed CC&nbsp;BY-NC-SA&nbsp;4.0.
+        Of 12,892 glaze recipes, 12,365 remain after removing entries with no
+        usable analysis, chemistries outside the chart's domain, and exact
+        duplicates. Each row carries the recipe name, its silica and alumina
+        in UMF, the computed silica:alumina ratio, Orton cone, surface type,
+        category and a link back to the recipe on Glazy. Two further files
+        hold the region polygons and the limit-formula rectangles; neither is
+        acquired data, both are hardcoded from published sources.
+    </p>
+
+    <h3>The redesign</h3>
+
+    <p class="lede">
+        Every mark is real glaze recipes from the Glazy database, placed by
+        chemistry. Clusters are sized by how many recipes they hold &mdash;
+        click one to zoom in and separate the recipes inside it.
+    </p>
+
+<!-- ============================================================
+     The "what am I looking at" panel. Collapsed by default so it
+     does not get in the way of someone who already knows.
+     ============================================================ -->
+<details id="explainer">
+    <summary>New to this chart? Start here</summary>
+
+    <div class="explainer-body">
+        <h3>What the two axes are</h3>
+        <p>
+            A glaze recipe is a list of raw materials, but what actually melts
+            in the kiln is the <em>chemistry</em> those materials add up to.
+            The standard way to write that chemistry is the Unity Molecular
+            Formula, or UMF, which scales everything so the melter oxides add
+            up to exactly 1. That makes any two recipes directly comparable.
+        </p>
+        <p>
+            <strong>Silica (SiO<sub>2</sub>)</strong>, across the bottom, is the
+            glass itself. <strong>Alumina (Al<sub>2</sub>O<sub>3</sub>)</strong>,
+            up the side, stiffens the melt and stops it running off the pot. A
+            glaze with 3.0 silica and 0.4 alumina sits at (3.0, 0.4).
+        </p>
+
+        <h3>What the colored bands mean</h3>
+        <p>
+            Stull fired hundreds of test tiles in 1912 and mapped which
+            chemistries came out glossy and which came out dry. The bands are
+            his answer. They fan out from the bottom-left corner because what
+            actually matters is not silica or alumina alone but the
+            <strong>ratio between them</strong> &mdash; and a fixed ratio is a
+            straight line from the origin.
+        </p>
+        <p>
+            Roughly: below about 5 parts silica to 1 part alumina you get matte
+            surfaces; above about 10:1 there is more silica than the heat can
+            melt, so the glaze comes out under-fired. In between is the glossy
+            zone.
+        </p>
+
+        <h3>How to read a dot's position</h3>
+        <p>
+            Turn on <em>Ratio lines</em> and you can read a recipe's ratio
+            straight off the chart by seeing which radial it sits nearest,
+            instead of dividing in your head. Moving a glaze <em>along</em> a
+            ratio line makes it stiffer or runnier without changing its
+            surface much; moving it <em>across</em> the lines changes the
+            surface. That is the single most useful thing the chart can tell
+            you, and it is the reason the ratio lines are here.
+        </p>
+
+        <h3>What the rectangles are</h3>
+        <p>
+            Different authors published their own "stay inside this box"
+            recommendations for reliable glazes. They are one authority's
+            opinion, not physical law, and they disagree with each other &mdash;
+            which is exactly why they are off by default and why you can only
+            show one at a time.
+        </p>
+
+        <h3>What this chart cannot tell you</h3>
+        <p>
+            <strong>The bands are cone 11 only.</strong> Stull fired his tests
+            at cone 11 with a particular flux balance, and those are the
+            boundaries drawn here. They do <em>not</em> move when you change
+            the cone filter, even though in reality the boundaries shift with
+            temperature. Compare the mattes at cone 10 with the mattes at cone
+            04 and you can see the mismatch for yourself.
+        </p>
+        <p>
+            <strong>The vertical scale is exaggerated about four times.</strong>
+            Silica runs 0&ndash;8 across a wide box while alumina runs
+            0&ndash;1.2 up a short one, so every slope you see is steeper than
+            the true slope. Ratios are still comparable <em>within</em> this
+            chart, because the stretch is the same everywhere &mdash; but do
+            not compare an angle here against an angle on a square plot.
+        </p>
+        <p>
+            <strong>Crazing is not really a region.</strong> It depends on the
+            clay body underneath as much as on the glaze, so no chart can
+            guarantee it. Treat all of these bands as a sketch of the
+            territory, not a promise.
+        </p>
+    </div>
+</details>
+
+<div class="layout">
+
+    <!-- ---------- left: the chart ---------- -->
+    <div class="chart-column">
+
+        <div id="chart"></div>
+
+        <div id="legend"></div>
+
+        <!-- ---------- filters, directly under the chart ---------- -->
+        <div class="controls">
+
+            <div class="control-block cb-search">
+                <label for="search">Search</label>
+                <input
+                    type="search"
+                    id="search"
+                    placeholder="Recipe name...">
+            </div>
+
+            <div class="control-block cb-cone">
+                <label for="cone-filter">Orton cone</label>
+                <select id="cone-filter"></select>
+            </div>
+
+            <div class="control-block cb-surface">
+                <label for="surface-filter">Surface</label>
+                <select id="surface-filter"></select>
+            </div>
+
+            <div class="control-block cb-type">
+                <label for="type-filter">Type</label>
+                <select id="type-filter"></select>
+            </div>
+
+            <div class="control-block cb-limit">
+                <label for="limit-filter">Limit rectangle</label>
+                <select id="limit-filter"></select>
+            </div>
+
+            <div class="toggles">
+                <label><input type="checkbox" id="show-ratios"> Ratio lines</label>
+                <label><input type="checkbox" id="show-gloss"> Gloss line</label>
+            </div>
+
+            <div class="buttons">
+                <button id="reset-zoom">Back to overview</button>
+                <button id="reset">Reset all filters</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ---------- right: the linked table ---------- -->
+    <div class="side-column">
+
+        <p id="drill-note" class="drill-note" hidden></p>
+        <p id="count" class="count"></p>
+
+        <div id="table-wrap">
+            <table id="recipe-table">
+                <thead>
+                    <tr>
+                        <th data-sort="name">Recipe</th>
+                        <th data-sort="sio2">SiO<sub>2</sub></th>
+                        <th data-sort="al2o3">Al<sub>2</sub>O<sub>3</sub></th>
+                        <th data-sort="si_al_ratio">Ratio</th>
+                        <th data-sort="cone_ordinal">Cone</th>
+                        <th data-sort="surface">Surface</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="tooltip" class="tooltip"></div>
+
+    <h3>Data source and references</h3>
+
+    <ul class="refs">
+        <li><strong>Visualization critiqued:</strong> Glazy.org recipe browser
+            and Stull chart.
+            <a href="https://glazy.org/recipes">glazy.org/recipes</a>,
+            accessed 27 September 2026.</li>
+        <li><strong>Data:</strong> Au, D. <em>glazy-data</em> &mdash; public
+            data from the Glazy database.
+            <a href="https://github.com/derekphilipau/glazy-data">github.com/derekphilipau/glazy-data</a>.
+            Licensed CC&nbsp;BY-NC-SA&nbsp;4.0.</li>
+        <li><strong>Regions:</strong> Stull, R.T. (1912). &ldquo;Influences of
+            Variable Silica and Alumina on Porcelain Glazes of Constant
+            RO.&rdquo; <em>Transactions of the American Ceramic Society</em>,
+            Vol. XIV. Polygons digitized from the printed Stull Diagram.</li>
+        <li><strong>Limit formulas:</strong> Green &amp; Cooper; Ron Roy
+            &amp; John Hesselberth; Val Cushing. Read from the sheets shown in
+            Britt, J., &ldquo;Short description of Glaze Limits and Stull
+            diagram&rdquo; and &ldquo;Understanding the Stull Chart,&rdquo;
+            Free Online Glaze Class Pts. 3&ndash;4.</li>
+        <li><strong>Visualization principles:</strong> Munzner, T. (2014).
+            <em>Visualization Analysis and Design</em>. CRC Press. &bull;
+            Szafir, D.A. (2017). &ldquo;Modeling Color Difference for
+            Visualization Design.&rdquo; <em>IEEE TVCG</em>. &bull; Duncan,
+            I.K., Tingsheng, S., Perrault, S.T. &amp; Gastner, M.T. (2021).
+            &ldquo;Task-Based Effectiveness of Interactive Contiguous Area
+            Cartograms.&rdquo; <em>IEEE TVCG</em> 27(3).</li>
+    </ul>
+
+</section>
+
+
+<section id="report">
+
+    <h2 class="part-heading">2. Visualization Critique and Redesign Report</h2>
+
+    <h3>Original visualization and context</h3>
+
+    <p>
+        Glazy.org's recipe browser is a coordinated dashboard: a Stull chart
+        plotting each glaze by silica against alumina, a filter panel, and a
+        paginated table, drawn from roughly 12,800 public recipes with
+        calculated Unity Molecular Formulas. Its message is that a glaze's fired
+        surface is largely predictable from where its chemistry sits.
+        The audience is practicing potters, mostly self-taught. Four tasks
+        follow of <em>locating</em> a recipe, <em>predicting</em> its surface,
+        <em>navigating</em> (decide which way to move a recipe), and
+        <em>judging</em> whether it can be trusted on functional ware.
+    </p>
+
+    <h3>Critique</h3>
+
+    <p>
+        <strong>Strength 1: the position encoding fits the variable.</strong> The
+        subject is not silica or alumina alone but the ratio between them, and
+        a fixed ratio is a line from the origin &mdash; so position makes
+        ratio readable as direction, the most accurate perceptual channel I found
+        (Munzner).
+    </p>
+
+    <p>
+        <strong>Strength 2: the filtering options and coordinated views</strong>
+        Filters help users find and tailor to what they're specifically looking for. 
+        And they drive the chart and table together. I also liked that hovering a row marks the
+        corresponding point, so lookup and overview share one interface really.
+    </p>
+
+    <p>
+        <strong>Weakness 1: the axes rescale to outliers.</strong> In Figure 2
+        they run to 22 and 7.5 because a few recipes carry broken analyses.
+        Across the database 96.45% of recipes fall inside the plate's bounds
+        of 7.2 by 1.0; the other 3.55% stretch the frame until the diagram
+        occupies about 4% of it. Compressing one axis far more than the other makes the central
+        task fail silently and makes it hard to navigate so many clustered points in a small area. 
+    </p>
+
+    <p>
+        <strong>Weakness 2: the chart plots only the current table page</strong>
+        &mdash; there are 495 pages at 25 recipes each. Paginating I think aimed to
+        control overplotting all the points on one chart, but Figure 1 shows marks still colliding at
+        twenty points, so the cost is paid without the benefit.
+        It also trades the synoptic task of comparison for the elementary task
+        of lookup (Duncan et al.): a viewer cannot see how glazes are
+        distributed or whether their own is unusual.
+    </p>
+
+    <p>
+        <strong>Weakness 3: color misleads not once but twice</strong> The regions
+        are filled with shades of one green. Saturation is a 
+        magnitude channel, so varying them implies an ordering when the
+        regions are nominal and also unlabelled. Separately, the marks are colored with
+        no legend. It appears to be each recipe's photographed color, which
+        is not reliable, ineffective, and confusing for an initial viewer.
+    </p>
+
+    <h3>Redesign rationale</h3>
+
+    <p>
+        <strong>1. A fixed, clipped domain.</strong> The redesign plots
+        0&ndash;8 silica against 0&ndash;1.2 alumina in a fixed pixel frame
+        that never rescales, because a chart reflowing with the window would
+        silently change every slope. This addresses Weakness 1. Radials at 5:1,
+        7.5:1 and 12:1 then make ratio readable without mental division.
+    </p>
+
+    <p>
+        <strong>2. Aggregate</strong> Every filtered recipe
+        is binned into clusters sized by count. If a user clicks one, it zooms in and separates the recipes inside, and the table follows along. This addresses
+        Weakness 2, doing properly what pagination attempted. So overplotting goes
+        while the entire population stays on screen, so distribution and outliers
+        become visible and lookup stays one click away. This could've also been done with lowering the opacity of the marks, but showing 
+        them all at once in the whole chart was still too cluttered and overwhelming. 
+    </p>
+
+    <p>
+        <strong>3. Re-encoding color.</strong> Regions take distinct hues with
+        their names written inside them and I made marks have an explicit surface
+        legend. This addresses Weakness 3 where hue is categorical and luminance is
+        not, so the false ordering disappears and every region can be named clearly.
+    </p>
+
+    <p>
+        <strong>4. Toggleable limit rectangles.</strong> Published glaze
+        limits &mdash; Green &amp; Cooper, Roy/Hesselberth, Cushing &mdash;
+        mark the chemistry ranges each author considers dependable. Overlaying
+        one turns the chart from a melting prediction into practical guidance:
+        a potter, especially a self-taught one, sees not just whether a glaze will fuse but whether it sits
+        where an authority would trust it on functional ware. This serves the
+        judge task, which the original leaves unsupported. Only one shows at a time, since displaying
+        them together would recreate the confusion they exist to resolve.
+    </p>
+
+    <h3>Original versus redesign</h3>
+
+    <p>
+        Locating is easier through larger marks and a stable frame; comparison
+        becomes possible at all; predicting no longer means guessing which
+        green is which; and the limit overlays make judging viability
+        possible.
+    </p>
+
+    <p>
+        What the redesign cannot do is make the chart certain. Glaze chemistry is not
+        deterministic: boundaries move with cone, cooling, clay body and
+        thickness. So uncertainty is built into the encoding rather than
+        footnoted, I softened the region edges, unverified rectangles are drawn dashed. The
+        regions remain Stull's cone 11 boundaries and do not shift with the
+        cone filter, since per-cone coordinates could not be sourced; the
+        polygons were read off printed label positions. I learned that a chart can be well-made and help orient a
+        potter, but not promise a result since inherently ceramics can be a bit unpredictable and based on many factors.
+    </p>
+
+    <h3>Figures and references</h3>
+
+    <figure class="fig">
+        <img src="figures/redesign.png"
+             alt="The redesigned chart: clustered recipes over named Stull regions in distinct hues, with a linked table.">
+        <figcaption>
+            <strong>Figure 3.</strong> The redesign. Clusters sized by recipe
+            count over a fixed domain, with named regions in distinct hues,
+            ratio radials, and a linked table. Figures 1 and 2 above show the
+            original.
+        </figcaption>
+    </figure>
+
+    <p class="refs-note">
+        Sources for the visualization, the data, the region polygons, the
+        limit formulas and the visualization principles cited are listed under
+        <a href="#part1">Data source and references</a> in Part 1.
+    </p>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="project.js"></script>
+
+</body>
+</html>

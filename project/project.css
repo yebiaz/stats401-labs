@@ -1,0 +1,429 @@
+/* Individual Project - additions only. Your ../css/style.css still governs
+   typography, nav and page background. Nothing here overrides those. */
+
+.lede {
+    max-width: 54em;
+    line-height: 1.55;
+}
+
+/* ---------- the explainer ---------- */
+
+#explainer {
+    max-width: 54em;
+    margin: 1.2em 0 1.8em 0;
+    padding: 0.6em 1em;
+    border: 1px solid #d8d8d8;
+    border-radius: 6px;
+    background: #fafafa;
+}
+
+#explainer summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.3em 0;
+}
+
+.explainer-body h3 {
+    margin: 1.1em 0 0.3em 0;
+    font-size: 1em;
+}
+
+.explainer-body p {
+    margin: 0.4em 0;
+    line-height: 1.55;
+}
+
+/* ---------- layout ---------- */
+
+/* ---------- layout ----------
+
+   The shared stylesheet centres the page in a fairly narrow column, which is
+   right for prose but too narrow for a 720px chart PLUS a table beside it -
+   the flex row just wraps and the table drops underneath.
+
+   This breaks only this one block out of that column. Pushing the element's
+   left edge to the centre of its parent and then pulling it back by half its
+   own width re-centres it against the viewport instead of against the
+   container, whatever max-width the container happens to have. Nothing else
+   on the page is affected, and css/style.css is untouched. */
+
+.layout {
+    width: 94vw;
+    max-width: 1320px;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.chart-column {
+    flex: 0 0 auto;
+}
+
+.side-column {
+    flex: 1 1 440px;
+    min-width: 380px;
+}
+
+/* On a genuinely narrow screen, stop fighting it and stack. */
+@media (max-width: 1150px) {
+    .layout {
+        width: 100%;
+        max-width: none;
+        left: auto;
+        transform: none;
+    }
+}
+
+/* ---------- chart internals ---------- */
+
+.region-label {
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    fill: #3d3d3d;
+    fill-opacity: 0.85;
+    pointer-events: none;
+}
+
+.ratio-line line {
+    stroke: #444;
+    stroke-width: 1;
+    stroke-dasharray: 2 3;
+}
+
+.ratio-line text {
+    font-size: 10px;
+    fill: #444;
+}
+
+.gloss-line {
+    stroke: #111;
+    stroke-width: 1.4;
+    stroke-dasharray: 1 4;
+    stroke-linecap: round;
+}
+
+.gloss-label {
+    font-size: 10px;
+    fill: #111;
+    letter-spacing: 0.06em;
+}
+
+.limit-caption {
+    font-size: 11px;
+    fill: #1f6feb;
+}
+
+.axis-title {
+    font-size: 12px;
+    fill: #333;
+}
+
+.point-layer circle {
+    cursor: pointer;
+}
+
+/* ---------- legend ---------- */
+
+#legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 10px;
+    font-size: 12px;
+    max-width: 720px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 0 0 1px #ccc;
+}
+
+/* ---------- controls ---------- */
+
+/* ---------- controls, sitting under the chart ----------
+
+   A vertical stack of eight controls would run far taller than the chart
+   itself. A grid that fits as many columns as the chart's width allows keeps
+   the whole control panel to two or three short rows, so the chart and the
+   table stay roughly level with each other. */
+
+/* Three columns. The four dropdowns occupy the right two as a 2x2 block -
+   cone above type, surface above limit rectangle - which leaves the whole
+   left column free for the search box and everything that is not a dropdown.
+   The checkboxes and buttons stack underneath the search rather than running
+   the full width, so the panel is three short rows instead of five.
+
+   Placement is explicit rather than left to auto-flow, so the columns hold
+   even if the markup is reordered later. */
+
+.controls {
+    width: 720px;
+    max-width: 100%;
+    margin-top: 16px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(190px, 1fr));
+    gap: 10px 20px;
+    align-items: start;
+}
+
+.cb-search  { grid-column: 1; grid-row: 1; }
+.toggles    { grid-column: 1; grid-row: 2; }
+/* Row 3 holds nothing but the buttons, so letting them span the full grid
+   width costs no layout and gives them room to sit side by side instead of
+   stacking inside a 230px column. */
+.buttons    { grid-column: 1 / -1; grid-row: 3; }
+
+.cb-cone    { grid-column: 2; grid-row: 1; }
+.cb-type    { grid-column: 2; grid-row: 2; }
+
+.cb-surface { grid-column: 3; grid-row: 1; }
+.cb-limit   { grid-column: 3; grid-row: 2; }
+
+/* Narrow screens: drop the placement and let everything stack in one column,
+   otherwise 190px columns start clipping the longer option labels. */
+@media (max-width: 760px) {
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .controls > * {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+}
+
+.control-block {
+    margin-bottom: 0;
+    min-width: 0;   /* lets a grid item shrink instead of overflowing */
+}
+
+/* Label above the control rather than beside it: in a narrow grid column an
+   inline label would eat most of the width. */
+.control-block label {
+    display: block;
+    min-width: 0;
+    margin-bottom: 3px;
+    font-size: 12px;
+    color: #555;
+}
+
+.control-block select,
+.control-block input[type="search"] {
+    padding: 4px 6px;
+    font-size: 13px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin: 2px 0;
+    font-size: 13px;
+}
+
+.toggles label {
+    min-width: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* nowrap stops the labels breaking mid-phrase ("Back to / overview") inside a
+   narrow column; flex-wrap then lets the two buttons stack instead, which is
+   the break you actually want. */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.buttons button {
+    white-space: nowrap;
+}
+
+.count {
+    font-size: 12px;
+    color: #666;
+    margin: 8px 0;
+}
+
+.drill-note {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1f6feb;
+    margin: 8px 0 0 0;
+}
+
+.swatch-sm {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* The chart surface accepts scroll-zoom and drag-pan. */
+#chart svg {
+    cursor: grab;
+}
+
+#chart svg:active {
+    cursor: grabbing;
+}
+
+/* ---------- table ---------- */
+
+/* Tall enough to sit level with the chart plus the controls underneath it,
+   so the two columns finish at about the same height. */
+#table-wrap {
+    max-height: 640px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#recipe-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12.5px;
+}
+
+#recipe-table thead th {
+    position: sticky;
+    top: 0;
+    background: #f2f2f2;
+    text-align: left;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    user-select: none;
+}
+
+#recipe-table td {
+    padding: 4px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 16em;
+}
+
+#recipe-table tbody tr {
+    cursor: pointer;
+}
+
+#recipe-table tbody tr.hovered {
+    background: #fff4d6;
+}
+
+#recipe-table tbody tr.selected {
+    background: #e3eefc;
+    font-weight: 600;
+}
+
+/* ---------- tooltip ---------- */
+
+.tooltip {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    padding: 7px 9px;
+    font-size: 12px;
+    line-height: 1.4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+    max-width: 20em;
+}
+
+.tt-dim {
+    color: #777;
+}
+
+/* ---------- the written report ---------- */
+
+#report {
+    max-width: 46em;
+    margin: 3.5em auto 4em auto;
+    line-height: 1.6;
+}
+
+#report h3 {
+    margin: 1.8em 0 0.4em 0;
+}
+
+#report p {
+    margin: 0.7em 0;
+}
+
+.fig {
+    margin: 1.6em 0;
+}
+
+.fig img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+}
+
+.fig figcaption {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.45;
+    margin-top: 0.5em;
+}
+
+.refs {
+    font-size: 13.5px;
+    line-height: 1.5;
+    padding-left: 1.2em;
+}
+
+.refs li {
+    margin-bottom: 0.45em;
+}
+
+.part-heading {
+    margin-top: 2.2em;
+    padding-bottom: 0.25em;
+    border-bottom: 2px solid #333;
+}
+
+#part1 {
+    max-width: 46em;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+#part1 h3 {
+    margin: 1.6em 0 0.4em 0;
+}
+
+.refs-note {
+    font-size: 13px;
+    color: #666;
+}
