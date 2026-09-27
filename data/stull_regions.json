@@ -1,0 +1,200 @@
+{
+  "cone": 11,
+  "flux_ratio": {
+    "R2O": 0.3,
+    "RO": 0.7
+  },
+  "domain": {
+    "sio2": [
+      0,
+      8.0
+    ],
+    "al2o3": [
+      0,
+      1.2
+    ]
+  },
+  "ratio_lines": [
+    {
+      "ratio": 5.0,
+      "label": "5:1 matte boundary",
+      "kind": "radial"
+    },
+    {
+      "ratio": 7.5,
+      "label": "7.5:1 glassy line (as usually quoted)",
+      "kind": "radial"
+    },
+    {
+      "ratio": 12.0,
+      "label": "12:1 into under-fired",
+      "kind": "radial"
+    }
+  ],
+  "gloss_line": {
+    "label": "HIGHEST GLOSS, as actually drawn on the plate",
+    "slope": 0.1352,
+    "intercept": -0.0533,
+    "note": "Not a radial through the origin. Drifts from 8.9:1 at the left end to 7.8:1 at the right, so ratio alone does not fully describe it."
+  },
+  "source": "Stull, R.T. (1912). Influences of Variable Silica and Alumina on Porcelain Glazes of Constant RO. Trans. Am. Ceram. Soc. XIV. Polygons digitized from the printed Stull Diagram plate.",
+  "warning": "Regions are cone 11 only. They do not shift when another cone is selected. Known limitation - the chart annotates it rather than hiding it.",
+  "regions": [
+    {
+      "id": "unfused",
+      "label": "Unfused",
+      "cone": 11,
+      "ratio_range": [
+        0.0,
+        2.1
+      ],
+      "provenance": "digitized from the printed Stull Diagram label positions",
+      "note": "Too much alumina for the flux to dissolve. Stiff, dry, opaque.",
+      "polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          2.52,
+          1.2
+        ],
+        [
+          0.0,
+          1.2
+        ]
+      ]
+    },
+    {
+      "id": "matte",
+      "label": "Matte",
+      "cone": 11,
+      "ratio_range": [
+        2.1,
+        3.1
+      ],
+      "provenance": "digitized from the printed Stull Diagram label positions",
+      "note": "Excess alumina relative to silica leaves the surface un-glassy.",
+      "polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          3.7199999999999998,
+          1.2
+        ],
+        [
+          2.52,
+          1.2
+        ]
+      ]
+    },
+    {
+      "id": "semi-matte",
+      "label": "Semi-matte",
+      "cone": 11,
+      "ratio_range": [
+        3.1,
+        5.0
+      ],
+      "provenance": "digitized from the printed Stull Diagram label positions",
+      "note": "Transitional. Stull's own boundary here is a curve, not a straight line.",
+      "polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          6.0,
+          1.2
+        ],
+        [
+          3.7199999999999998,
+          1.2
+        ]
+      ]
+    },
+    {
+      "id": "gloss",
+      "label": "Bright gloss",
+      "cone": 11,
+      "ratio_range": [
+        5.0,
+        10.0
+      ],
+      "provenance": "digitized from the printed Stull Diagram label positions",
+      "note": "Stull's bright glossy zone. The printed HIGHEST GLOSS line runs through it.",
+      "polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          0.8
+        ],
+        [
+          8.0,
+          1.2
+        ],
+        [
+          6.0,
+          1.2
+        ]
+      ]
+    },
+    {
+      "id": "underfired",
+      "label": "Under-fired",
+      "cone": 11,
+      "ratio_range": [
+        10.0,
+        null
+      ],
+      "provenance": "digitized from the printed Stull Diagram label positions",
+      "note": "Silica high relative to alumina, but not enough heatwork to melt it smooth.",
+      "polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          0.0
+        ],
+        [
+          8.0,
+          0.8
+        ]
+      ]
+    },
+    {
+      "id": "crazed",
+      "label": "Crazing risk",
+      "cone": 11,
+      "ratio_range": null,
+      "provenance": "alumina ceiling read off the plate at the CRAZED label; silica ceiling INFERRED, not measured - least certain number here",
+      "note": "Overlay, not an exclusive region: it sits on top of whatever band is underneath. Crazing depends on the clay body as much as on the glaze, so no chart can guarantee it.",
+      "overlay": true,
+      "polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          3.0,
+          0.0
+        ],
+        [
+          3.0,
+          0.2
+        ],
+        [
+          0.0,
+          0.2
+        ]
+      ]
+    }
+  ]
+}
