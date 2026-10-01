@@ -1,27 +1,144 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 9</title>
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="lab9.css">
 </head>
-
 <body>
 
-    <h1>Lab 9</h1>
+<h1>Lab 9</h1>
 
-    <p>
-        Lab 9 will be added here.
-    </p>
+<nav class="lab-nav">
+    <a href="../index.html">Home</a>
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+    <a href="../lab4/index.html">Lab 4</a>
+    <a href="../lab5/index.html">Lab 5</a>
+    <a href="../lab6/index.html">Lab 6</a>
+    <a href="../lab7/index.html">Lab 7</a>
+    <a href="../lab8/index.html">Lab 8</a>
+</nav>
 
-    <a href="../index.html">
-        Back to home
-    </a>
+<h2>Lab 9: Geospatial Visualization</h2>
+<p class="lede">
+    Favorite lab in a while! 
+</p>
+
+<h3>1. Dataset Description</h3>
+
+<p class="lede">
+    The 50 largest economies by nominal GDP in 2025, from the IMF World
+    Economic Outlook (October 2025), joined onto Natural Earth country
+    boundaries using ISO3 identifiers. 
+</p>
+
+<p class="lede">
+    Countries outside the top 50 are shown as missing data rather than as zero GDP. 
+</p>
+
+
+<h3>2. 2025 GDP Choropleth- colour encodes GDP</h3>
+
+<div class="controls">
+    <label for="scale-select">Colour scale</label>
+    <select id="scale-select">
+        <option value="linear">Linear</option>
+        <option value="log">Logarithmic</option>
+        <option value="sqrt">Square root</option>
+    </select>
+
+<p class="lede">
+    Logarithmic scale is significantly better than linear and square root scale. The colors are still discriminable and 
+    each country that has a GDP value we are sure has a color contrasting the background. Whereas linear is much more polar,
+    with only China and the US with dark purple and the rest just light purple (basically two bins). I also made sure to make the background 
+    a bit beiger than just white to help with distinguishing. I also made the highlight/hover color yellow as it complements the purple and stands out. 
+</p>
+
+    <button id="reset-zoom">Reset zoom</button>
+</div>
+
+<div id="legend"></div>
+<p id="scale-note" class="note"></p>
+
+<p class="hint">Scroll to zoom, drag to pan. Hover a country to highlight it in both maps.</p>
+
+<div id="choropleth"></div>
+
+
+<h3>3. 2025 GDP Cartogram- non-contiguous (area encodes GDP)</h3>
+
+<p class="lede">
+    Every country has its real outline and position still, but is
+    resized its area is proportional to GDP. This was my first attempt but I 
+    didn't really love how the countries overlap a lot. I tried addressing this problem 
+    by making sure the big countries always go at the bottom first, but in places like Europe, there
+    are too many countries cluttered to really be able to absorb all of them. I realized this type of map 
+    may work best for quantities that get smaller than its original size rather than bigger, so there's isn't as much 
+    overlapping clutter. 
+</p>
+
+<div id="cartogram-nc"></div>
+
+
+<h3>4. 2025 GDP Cartogram- Dorling (area encodes GDP)</h3>
+
+<p class="lede">
+    My second attempt with the cartogram I much prefer. Each circle is one country, and its area is proportional to
+    GDP. Circles start at a country's real position and are
+    pushed apart only as far as needed to stop them overlapping, so geography
+    survives a bit and area encodes quantity. I made as many circles labelled as I could, but some
+    were too small to include abbreviations. I then considered using squares instead of circles but I felt the circles 
+    preserved the geographic feeling of point locations and of quantities a bit more. I figured in addition to hovering and seeing
+    details of a country, you could get a sense on the size of its original, so a dashed circle of its smaller/larger original size. 
+    Last note, I felt the cartogram makes the user feel the absence of countries not in the map a bit more. The map feels significantly emptier. Although with 
+    places like Asia, it might feel emptier but a bit harder to tell WHICH countries are missing if a user doesn't know their geography especially. So you may FEEL absence more but not know 
+    precisely which countries and have as detailed knowledge. 
+</p>
+
+<div id="cartogram"></div>
+
+
+<h3>5. Design and Comparison</h3>
+
+<ol class="qa">
+ 
+    <li>Which countries are most visually prominent in each map?
+        <p>Choropleth: the darkest ones</p>
+        <p>Cartogram: the darkest AND biggest ones</p>
+    </li>
+ 
+    <li>Which countries become much larger or smaller in the cartogram?
+        <p>Based on just looking, Brazil and Norway get a lot smaller and the US and China feel like they dominate. But when I hover, I can see the precise numbers of how much a country changed and actually Hong Kong, Singapore, and Israel got significantly bigger. So visuals might tell a slightly different story than tooltips and searching might.</p>
+    </li>
+ 
+    <li>What geographic information does the choropleth preserve?
+        <p>the adjacencies and actual sizes of each region. the actual geometry of the world map. This is exactly what the cartogram distorts by making each country&rsquo;s shape a circle (so we&rsquo;re losing the definition and shape of each terriroty), changing its size (so not based on geographic reality but encoding the GDP attribute), and thus not fully preserving the adjacencies. I tried keeping around the same relative longitude and latitude but it&rsquo;s not exactly right.</p>
+    </li>
+ 
+    <li>What types of questions or tasks can the choropleth best support?
+        <p>Lookup and browsing. Because position is preserved, I can use the actual geography and easily find a country and its shade. Same reasoning with browsing, I can scan a region and see the whole actual neighborhood at once without knowing in advance which countries are in the top 50. These are elementary tasks of one country and one value and region-leveled browsing. But comparison is difficult because once two countries are both in the darkest band, I can&rsquo;t really tell which is bigger.</p>
+    </li>
+ 
+    <li>What types of questions or tasks can the cartogram best support?
+        <p>Comparison, ranking, and summarizing. Area is proportional and, unlike colour, it adds up and actually represents a quantitative attribute. So I can look at the North American blobs together and get a better feel for their combined share of world GDP, a lot more possible than with the choropleth. It&rsquo;s also good for finding outliers. But it&rsquo;s not great for looking up. If I don&rsquo;t already know roughly where a country belongs, especially one that&rsquo;s unlabelled, then I can&rsquo;t find its circle. Only with the tooltip can I searching.</p>
+    </li>
+ 
+    <li>How does changing from colour encoding to area encoding change your perception of global economic size?
+        <p>I think area encoding is more representative and keeps the real ratio and so that brings more shocking differences between countires that the choropleth can&rsquo;t bring. It&rsquo;s more extreme of a perception. But that doesn&rsquo;t mean I don&rsquo;t like the color encoding. I like the redundant encoding where colour gives me the general band and story and area gives me the amount.</p>
+    </li>
+ 
+</ol>
+ 
+
+
+<div id="tooltip" class="tooltip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="lab9.js"></script>
 
 </body>
-
 </html>
