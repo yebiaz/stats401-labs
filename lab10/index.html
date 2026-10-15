@@ -1,27 +1,266 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 10</title>
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../lab9/lab9.css">
+    <link rel="stylesheet" href="lab10.css">
 </head>
-
 <body>
 
-    <h1>Lab 10</h1>
+<h1>Lab 10</h1>
 
-    <p>
-        Lab 10 will be added here.
+<nav class="lab-nav">
+    <a href="../index.html">Home</a>
+    <a href="../lab1/index.html">Lab 1</a>
+    <a href="../lab2/index.html">Lab 2</a>
+    <a href="../lab3/index.html">Lab 3</a>
+    <a href="../lab4/index.html">Lab 4</a>
+    <a href="../lab5/index.html">Lab 5</a>
+    <a href="../lab6/index.html">Lab 6</a>
+    <a href="../lab7/index.html">Lab 7</a>
+    <a href="../lab8/index.html">Lab 8</a>
+    <a href="../lab9/index.html">Lab 9</a>
+</nav>
+
+<h2>Lab 10: Novel Interaction with Visualizations</h2>
+
+<p class="lede">
+    Three input modalities to experiment with my <a href="../lab9/index.html">Lab 9</a>
+    GDP map: voice, hand gestures through the webcam, and webcam eye gaze.
+    All three call the same functions the mouse and the buttons call, so they can always be used as backup.
+</p>
+
+
+<!-- ================================================================
+     PART I - VOICE (Tasks 1-5)
+     ================================================================ -->
+
+<section class="modality">
+
+    <h3>Part I &mdash; Voice</h3>
+
+    <p id="voice-support"></p>
+
+    <div class="controls">
+        <button id="voice-button">Start Voice Control</button>
+        <button id="voice-stop" disabled>Stop</button>
+    </div>
+
+    <p id="voice-status" class="vstatus">Voice control inactive</p>
+    <p id="voice-action" class="vaction"></p>
+
+    <table class="vocab">
+        <tr><th>Say</th><th>Does</th></tr>
+        <tr><td>&ldquo;highlight japan&rdquo;</td><td>outlines that country in all three maps</td></tr>
+        <tr><td>&ldquo;show asia&rdquo;</td><td>highlights every top-50 country in that region</td></tr>
+        <tr><td>&ldquo;logarithmic&rdquo; / &ldquo;linear&rdquo; / &ldquo;square root&rdquo;</td><td>switches the colour scale</td></tr>
+        <tr><td>&ldquo;reset&rdquo;</td><td>clears the highlight and the zoom</td></tr>
+    </table>
+
+</section>
+
+
+<!-- ================================================================
+     PART II - HAND GESTURE (Tasks 6-10)
+     ================================================================ -->
+
+<section class="modality">
+
+    <h3>Part II &mdash; Hand gesture</h3>
+
+    <div class="controls">
+        <button id="camera-start">Start Camera</button>
+        <button id="camera-stop" disabled>Stop Camera</button>
+    </div>
+
+    <div class="cam-row">
+        <video id="camera" autoplay playsinline muted width="240" height="180"></video>
+        <div>
+            <p id="camera-status" class="vstatus">Camera off</p>
+            <p id="gesture-detected" class="vstatus"></p>
+            <p id="gesture-action" class="vaction"></p>
+        </div>
+    </div>
+
+    <table class="vocab">
+        <tr><th>Gesture</th><th>Does</th></tr>
+        <tr><td>One finger</td><td>linear colour scale</td></tr>
+        <tr><td>Two fingers (peace)</td><td>logarithmic colour scale</td></tr>
+        <tr><td>Three fingers</td><td>square-root colour scale</td></tr>
+        <tr><td>Thumb up</td><td>jump to the <b>largest</b> economy</td></tr>
+        <tr><td>Thumb down</td><td>jump to the <b>smallest</b> of the fifty</td></tr>
+        <tr><td>Thumb pointing right</td><td>next <b>smaller</b> economy</td></tr>
+        <tr><td>Thumb pointing left</td><td>next <b>bigger</b> economy</td></tr>
+        <tr><td>Open palm</td><td>reset everything</td></tr>
+    </table>
+
+    <p class="note">
+        Hold a pose steady for about a second. A sideways thumb walks the
+        fifty countries in GDP order, and holding it keeps stepping. It
+        stops at each end without looping around.
     </p>
 
-    <a href="../index.html">
-        Back to home
-    </a>
+</section>
+
+
+<!-- ================================================================
+     PART III - EYE GAZE (Tasks 11-13)
+     ================================================================ -->
+
+<section class="modality">
+
+    <h3>Part III &mdash; Eye gaze</h3>
+
+    <div class="controls">
+        <button id="gaze-start">Start Gaze Tracking</button>
+        <button id="gaze-stop" disabled>Stop</button>
+    </div>
+
+    <p id="gaze-status" class="vstatus">Gaze tracking off</p>
+    <p id="gaze-target" class="vaction"></p>
+
+    <table class="vocab">
+        <tr><th>Do</th><th>Happens</th></tr>
+        <tr><td>Look at a country</td><td>a counter runs to 100% over 800&nbsp;ms</td></tr>
+        <tr><td>Keep looking</td><td>it previews as highlighted</td></tr>
+        <tr><td>Say &ldquo;select&rdquo;</td><td>locks it in, so it stays when you look away</td></tr>
+        <tr><td>Say &ldquo;reset&rdquo;</td><td>releases the lock</td></tr>
+    </table>
+
+    <div class="controls">
+        <span class="fb-label">Without voice</span>
+        <button data-command="select">Select what I'm looking at</button>
+        <button data-command="reset">Release</button>
+    </div>
+
+    <details class="setup-note">
+        <summary>One-time setup: the face-tracking model</summary>
+ 
+<pre><code>mkdir -p mediapipe/face_mesh &amp;&amp; cd mediapipe/face_mesh
+BASE=https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh
+for f in face_mesh.binarypb \
+         face_mesh_solution_packed_assets.data \
+         face_mesh_solution_packed_assets_loader.js \
+         face_mesh_solution_simd_wasm_bin.js \
+         face_mesh_solution_simd_wasm_bin.wasm ; do
+    curl -O "$BASE/$f"
+done
+cd ../..</code></pre>
+        <p>
+            If the console still 404s on a filename that is not in that list,
+            add it &mdash; the error names exactly what WebGazer wants.
+        </p>
+    </details>
+
+</section>
+
+
+<hr>
+
+
+<!-- ================================================================
+     ASSIGNMENT
+     ================================================================ -->
+
+<h2>Assignment: 2025 GDP map with novel interaction</h2>
+
+<div class="controls">
+    <label for="scale-select">Colour scale</label>
+    <select id="scale-select">
+        <option value="linear">Linear</option>
+        <option value="log">Logarithmic</option>
+        <option value="sqrt">Square root</option>
+    </select>
+
+    <button id="reset-zoom">Reset zoom</button>
+</div>
+
+<!-- Conventional fallback (Part C). Each button sends the same string a voice
+     command would, through the same handler, so the paths cannot drift. -->
+<div id="fallback-controls">
+
+    <div class="controls">
+        <span class="fb-label">Colour scale</span>
+        <button data-command="logarithmic">Logarithmic</button>
+        <button data-command="linear">Linear</button>
+        <button data-command="square root">Square root</button>
+    </div>
+
+    <div class="controls">
+        <span class="fb-label">Highlight</span>
+        <button data-command="highlight japan">Japan</button>
+        <button data-command="highlight china">China</button>
+        <button data-command="highlight germany">Germany</button>
+    </div>
+
+    <div class="controls">
+        <span class="fb-label">Region</span>
+        <button data-command="show asia">Asia</button>
+        <button data-command="show europe">Europe</button>
+        <button data-command="show north america">North America</button>
+    </div>
+
+    <div class="controls">
+        <span class="fb-label">Ranking</span>
+        <button data-command="largest">&#9198;&#65039; Largest</button>
+        <button id="rank-bigger" data-command="next bigger">&#9664; Bigger</button>
+        <button id="rank-smaller" data-command="next smaller">Smaller &#9654;</button>
+        <button data-command="smallest">Smallest &#9197;&#65039;</button>
+        <span class="hint">or the &larr; &rarr; arrow keys</span>
+    </div>
+
+    <div class="controls">
+        <span class="fb-label">Map</span>
+        <button data-command="reset">Reset everything</button>
+    </div>
+
+</div>
+
+<div id="legend"></div>
+<p id="scale-note" class="note"></p>
+
+<p class="hint">
+    Scroll to zoom, drag to pan, hover a country for details. The dataset
+    description and the design rationale for the three views are in
+    <a href="../lab9/index.html">Lab 9</a>.
+</p>
+
+<div id="choropleth"></div>
+
+<div id="cartogram-nc"></div>
+
+<div id="cartogram"></div>
+
+
+<h3>Design Reflection</h3>
+
+<p class="lede">
+    I extended the lab 9 visualization since that was my most recent favorite. Actually, I didn't realize the true benefits of these modalities for this 
+    visualization until I added some and played around with them, especially hand gestures. With thumbs up and down, the user can more easily identify the extreme 
+    GDP countries. Area and color encoding can show that but this is even clearer and easier for the user. And then adding the thumbs right and thumbs left I realized was basically
+    like a more easily controlled animation! Users can swipe through the order without having to digest the encoding and it makes summarizing and comparing much more convenient. Changing the scale 
+    was also nice because a user doesn't have to scroll up and manually change it, but compare with a simple change of fingers! This makes comparing the scales easier but then I realized not scrolling up and down for any of these gestures
+    and just absorbing the content is a big help. Voice I did a similar addition with the scale but I did like that it's easier to group highlights with voice, like I couldn't figure out how I would highlight Asia with hand gestures. 
+
+    The gesture I found the most trouble with was gaze. It would jump around a lot and I realized it does better in identifying my eyes moving side to side rather than up to down. I often had to scroll or move my pointer anyway which kind of defeated the purpose 
+    of eye gaze. Nonetheless, it was a really cool modality and was fun to pair with voice. Maybe I could move my head or hand to the side to indicate that it needs to shift my gaze somewhere? Thus combining with camera gestures. As you can see, still a lot to have fun with. 
+    This was a fun end to the labs! Will miss this class. 
+</p>
+
+
+<div id="tooltip" class="tooltip"></div>
+<div id="gaze-cursor"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+
+<script src="lab9_map.js"></script>
+<script src="lab10.js"></script>
+<script src="lab10_gaze.js"></script>
+<script type="module" src="lab10_gesture.js"></script>
 
 </body>
-
 </html>
